@@ -1,1 +1,1 @@
-# PangenomeAnalysus
+# PangenomeAnalysis
