@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completely Absent Functional Clusters Analysis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .summary {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        .summary h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .summary-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .summary-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        .filter-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+        }
+        .filter-section input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            user-select: none;
+        }
+        th:hover {
+            background-color: #2c3e50;
+        }
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        .strain-id {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .organism-name {
+            max-width: 300px;
+            word-wrap: break-word;
+        }
+        .count-cell {
+            text-align: center;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .count-high {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .count-medium {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        .count-low {
+            background-color: #e8f5e8;
+            color: #2e7d32;
+        }
+        .count-zero {
+            background-color: #f5f5f5;
+            color: #757575;
+        }
+        .function-list {
+            max-width: 400px;
+            word-wrap: break-word;
+        }
+        .function-item {
+            display: inline-block;
+            background-color: #ffcdd2;
+            color: #b71c1c;
+            padding: 3px 8px;
+            margin: 2px;
+            border-radius: 15px;
+            font-size: 12px;
+            border: 1px solid #ef5350;
+        }
+        .bp-function {
+            background-color: #ffcdd2;
+            border-color: #ef5350;
+            color: #b71c1c;
+        }
+        .mf-function {
+            background-color: #c8e6c9;
+            border-color: #66bb6a;
+            color: #1b5e20;
+        }
+        .no-functions {
+            color: #757575;
+            font-style: italic;
+        }
+        .sort-indicator {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+        .explanation {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        .explanation h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧬 Completely Absent Functional Clusters Analysis</h1>
+        
+        <div class="explanation">
+            <h3>📋 What This Analysis Shows</h3>
+            <p><strong>Completely Absent Clusters:</strong> Strains that have <em>zero genes</em> for entire functional categories anywhere in their genome. This is different from "incomplete clusters" where strains have some genes but are missing parts of the core gene set.</p>
+            <p><strong>BP (Biological Process):</strong> What the cell does (e.g., DNA repair, metabolism)</p>
+            <p><strong>MF (Molecular Function):</strong> What proteins do (e.g., enzyme activity, binding)</p>
+        </div>
+        
+        <div class="summary">
+            <h2>📊 Summary Statistics</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-number">30</div>
+                    <div class="summary-label">Total Strains Analyzed</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">18</div>
+                    <div class="summary-label">Strains Missing BP Functions</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">30</div>
+                    <div class="summary-label">Strains Missing MF Functions</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">6</div>
+                    <div class="summary-label">Max BP Functions Lost</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">7</div>
+                    <div class="summary-label">Max MF Functions Lost</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="filter-section">
+            <input type="text" id="searchInput" placeholder="🔍 Search by organism name or strain ID..." style="width: 300px;">
+            <select id="filterSelect" style="padding: 8px;">
+                <option value="all">Show All Strains</option>
+                <option value="with-absent">Only Strains with Absent Functions</option>
+                <option value="bp-only">Only BP Absent</option>
+                <option value="mf-only">Only MF Absent</option>
+            </select>
+        </div>
+        
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Strain ID <span class="sort-indicator">↕</span></th>
+                    <th onclick="sortTable(1)">Organism <span class="sort-indicator">↕</span></th>
+                    <th onclick="sortTable(2)">Absent BP Count <span class="sort-indicator">↕</span></th>
+                    <th onclick="sortTable(3)">Absent MF Count <span class="sort-indicator">↕</span></th>
+                    <th>Absent Biological Process Functions</th>
+                    <th>Absent Molecular Function Functions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="strain-id">UP000500986</td>
+                    <td class="organism-name">Streptomyces sp. Tu 2975</td>
+                    <td class="count-cell count-high">6</td>
+                    <td class="count-cell count-high">6</td>
+                    <td class="function-list"><span class="function-item bp-function">transcription-coupled nucleotide-excision repair, DNA damage recognition</span> <span class="function-item bp-function">regulation of translational fidelity</span> <span class="function-item bp-function">protein unfolding</span> <span class="function-item bp-function">'de novo' cotranslational protein folding</span> <span class="function-item bp-function">glutamyl-tRNA aminoacylation</span> <span class="function-item bp-function">intracellular manganese ion homeostasis</span></td>
+                    <td class="function-list"><span class="function-item mf-function">acetoacetate-CoA ligase activity</span> <span class="function-item mf-function">glutamate-tRNA ligase activity</span> <span class="function-item mf-function">fumarate hydratase activity</span> <span class="function-item mf-function">phosphoglycerate dehydrogenase activity</span> <span class="function-item mf-function">glycine binding</span> <span class="function-item mf-function">cobaltochelatase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000278047</td>
+                    <td class="organism-name">Streptomyces sp. WAC 06738</td>
+                    <td class="count-cell count-medium">5</td>
+                    <td class="count-cell count-high">7</td>
+                    <td class="function-list"><span class="function-item bp-function">signal peptide processing</span> <span class="function-item bp-function">glycogen catabolic process</span> <span class="function-item bp-function">lipoprotein biosynthetic process</span> <span class="function-item bp-function">heme B biosynthetic process</span> <span class="function-item bp-function">RNA repair</span></td>
+                    <td class="function-list"><span class="function-item mf-function">stearoyl-[ACP] desaturase activity</span> <span class="function-item mf-function">chlorite O2-lyase activity</span> <span class="function-item mf-function">N-acyltransferase activity</span> <span class="function-item mf-function">cation binding</span> <span class="function-item mf-function">1,4-alpha-glucan branching enzyme activity</span> <span class="function-item mf-function">phosphogluconate dehydrogenase (decarboxylating) activity</span> <span class="function-item mf-function">amylo-alpha-1,6-glucosidase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000267900</td>
+                    <td class="organism-name">Streptomyces luteoverticillatus (Streptoverticillium luteoverticillatus)</td>
+                    <td class="count-cell count-medium">4</td>
+                    <td class="count-cell count-medium">5</td>
+                    <td class="function-list"><span class="function-item bp-function">steroid metabolic process</span> <span class="function-item bp-function">shikimate metabolic process</span> <span class="function-item bp-function">ectoine transmembrane transport</span> <span class="function-item bp-function">rRNA 5'-end processing</span></td>
+                    <td class="function-list"><span class="function-item mf-function">ectoine binding</span> <span class="function-item mf-function">shikimate 3-dehydrogenase (NADP+) activity</span> <span class="function-item mf-function">nicotinate-nucleotide diphosphorylase (carboxylating) activity</span> <span class="function-item mf-function">undecaprenyl-diphosphatase activity</span> <span class="function-item mf-function">hydrolase activity, acting on ester bonds</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000268329</td>
+                    <td class="organism-name">Streptomyces dangxiongensis</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="function-list"><span class="function-item bp-function">glucose 6-phosphate metabolic process</span> <span class="function-item bp-function">selenocysteine biosynthetic process</span> <span class="function-item bp-function">seryl-tRNA aminoacylation</span></td>
+                    <td class="function-list"><span class="function-item mf-function">serine-tRNA ligase activity</span> <span class="function-item mf-function">riboflavin kinase activity</span> <span class="function-item mf-function">sulfite reductase (ferredoxin) activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000194218</td>
+                    <td class="organism-name">Streptomyces marincola</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="count-cell count-high">6</td>
+                    <td class="function-list"><span class="function-item bp-function">thiamine transport</span> <span class="function-item bp-function">phenylacetate catabolic process</span> <span class="function-item bp-function">intracellular manganese ion homeostasis</span></td>
+                    <td class="function-list"><span class="function-item mf-function">phenylacetate-CoA ligase activity</span> <span class="function-item mf-function">3-hydroxyacyl-CoA dehydrogenase activity</span> <span class="function-item mf-function">2-oxo-4-hydroxy-4-carboxy-5-ureidoimidazoline decarboxylase activity</span> <span class="function-item mf-function">fumarate hydratase activity</span> <span class="function-item mf-function">protein homodimerization activity</span> <span class="function-item mf-function">thiamine binding</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000233829</td>
+                    <td class="organism-name">Streptomyces sp. CMB-StM0423</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="count-cell count-medium">5</td>
+                    <td class="function-list"><span class="function-item bp-function">glycogen catabolic process</span> <span class="function-item bp-function">lipoprotein biosynthetic process</span> <span class="function-item bp-function">RNA repair</span></td>
+                    <td class="function-list"><span class="function-item mf-function">stearoyl-[ACP] desaturase activity</span> <span class="function-item mf-function">N-acyltransferase activity</span> <span class="function-item mf-function">cation binding</span> <span class="function-item mf-function">1,4-alpha-glucan branching enzyme activity</span> <span class="function-item mf-function">amylo-alpha-1,6-glucosidase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000195755</td>
+                    <td class="organism-name">Streptomyces albireticuli</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="function-list"><span class="function-item bp-function">steroid metabolic process</span> <span class="function-item bp-function">ectoine transmembrane transport</span></td>
+                    <td class="function-list"><span class="function-item mf-function">ectoine binding</span> <span class="function-item mf-function">nicotinate-nucleotide diphosphorylase (carboxylating) activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000195880</td>
+                    <td class="organism-name">Streptomyces alboflavus</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="count-cell count-high">6</td>
+                    <td class="function-list"><span class="function-item bp-function">protoporphyrinogen IX biosynthetic process from glutamate</span> <span class="function-item bp-function">protein-DNA covalent cross-linking repair</span></td>
+                    <td class="function-list"><span class="function-item mf-function">uroporphyrinogen decarboxylase activity</span> <span class="function-item mf-function">phosphotransferase activity, for other substituted phosphate groups</span> <span class="function-item mf-function">stearoyl-[ACP] desaturase activity</span> <span class="function-item mf-function">NADPH binding</span> <span class="function-item mf-function">1-deoxy-D-xylulose-5-phosphate reductoisomerase activity</span> <span class="function-item mf-function">N-acetylglucosamine-6-phosphate deacetylase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000515544</td>
+                    <td class="organism-name">Streptomyces sp. SCUT-3</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="count-cell count-medium">5</td>
+                    <td class="function-list"><span class="function-item bp-function">lysyl-tRNA aminoacylation</span> <span class="function-item bp-function">protein folding</span></td>
+                    <td class="function-list"><span class="function-item mf-function">lysine-tRNA ligase activity</span> <span class="function-item mf-function">urate oxidase activity</span> <span class="function-item mf-function">orotidine-5'-phosphate decarboxylase activity</span> <span class="function-item mf-function">threonine-type endopeptidase activity</span> <span class="function-item mf-function">cobaltochelatase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000095349</td>
+                    <td class="organism-name">Streptomyces rubrolavendulae</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="function-list"><span class="function-item bp-function">glyoxylate cycle</span> <span class="function-item bp-function">urate catabolic process</span></td>
+                    <td class="function-list"><span class="function-item mf-function">coenzyme F420 binding</span> <span class="function-item mf-function">2-oxo-4-hydroxy-4-carboxy-5-ureidoimidazoline decarboxylase activity</span> <span class="function-item mf-function">urate oxidase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000034283</td>
+                    <td class="organism-name">Streptomyces sp. CNQ-509</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="count-cell count-medium">5</td>
+                    <td class="function-list"><span class="function-item bp-function">glycogen catabolic process</span> <span class="function-item bp-function">RNA repair</span></td>
+                    <td class="function-list"><span class="function-item mf-function">stearoyl-[ACP] desaturase activity</span> <span class="function-item mf-function">amylo-alpha-1,6-glucosidase activity</span> <span class="function-item mf-function">cation binding</span> <span class="function-item mf-function">1,4-alpha-glucan branching enzyme activity</span> <span class="function-item mf-function">protein-L-isoaspartate (D-aspartate) O-methyltransferase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000192651</td>
+                    <td class="organism-name">Streptomyces sp. MOE7</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="function-list"><span class="function-item bp-function">malate metabolic process</span></td>
+                    <td class="function-list"><span class="function-item mf-function">dihydroxy-acid dehydratase activity</span> <span class="function-item mf-function">hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amidines</span> <span class="function-item mf-function">orotidine-5'-phosphate decarboxylase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000198609</td>
+                    <td class="organism-name">Streptomyces melanosporofaciens</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="function-list"><span class="function-item bp-function">RNA repair</span></td>
+                    <td class="function-list"><span class="function-item mf-function">phosphotransferase activity, for other substituted phosphate groups</span> <span class="function-item mf-function">D-alanine-D-alanine ligase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000244900</td>
+                    <td class="organism-name">Streptomyces tirandamycinicus</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="function-list"><span class="function-item bp-function">molybdate ion transport</span></td>
+                    <td class="function-list"><span class="function-item mf-function">antimonite transmembrane transporter activity</span> <span class="function-item mf-function">arsenite transmembrane transporter activity</span> <span class="function-item mf-function">molybdate ion binding</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000509509</td>
+                    <td class="organism-name">Streptomyces sp. NA04227</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="function-list"><span class="function-item bp-function">thiamine transport</span></td>
+                    <td class="function-list"><span class="function-item mf-function">thiamine binding</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000034034</td>
+                    <td class="organism-name">Streptomyces xiamenensis</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="count-cell count-high">7</td>
+                    <td class="function-list"><span class="function-item bp-function">rRNA 5'-end processing</span></td>
+                    <td class="function-list"><span class="function-item mf-function">phenylacetate-CoA ligase activity</span> <span class="function-item mf-function">precorrin-6A synthase (deacetylating) activity</span> <span class="function-item mf-function">3-hydroxyacyl-CoA dehydrogenase activity</span> <span class="function-item mf-function">2-oxo-4-hydroxy-4-carboxy-5-ureidoimidazoline decarboxylase activity</span> <span class="function-item mf-function">undecaprenyl-diphosphatase activity</span> <span class="function-item mf-function">hydrolase activity, acting on ester bonds</span> <span class="function-item mf-function">cobaltochelatase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000509303</td>
+                    <td class="organism-name">Streptomyces buecherae</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="count-cell count-medium">4</td>
+                    <td class="function-list"><span class="function-item bp-function">thiamine transport</span></td>
+                    <td class="function-list"><span class="function-item mf-function">thiamine binding</span> <span class="function-item mf-function">cation binding</span> <span class="function-item mf-function">threonine-type endopeptidase activity</span> <span class="function-item mf-function">1,4-alpha-glucan branching enzyme activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000464107</td>
+                    <td class="organism-name">Streptomyces sp. NHF165</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="count-cell count-medium">5</td>
+                    <td class="function-list"><span class="function-item bp-function">regulation of nitrogen utilization</span></td>
+                    <td class="function-list"><span class="function-item mf-function">2',3'-cyclic-nucleotide 2'-phosphodiesterase activity</span> <span class="function-item mf-function">stearoyl-[ACP] desaturase activity</span> <span class="function-item mf-function">L-phosphoserine phosphatase activity</span> <span class="function-item mf-function">protein-disulfide reductase (NAD(P)H) activity</span> <span class="function-item mf-function">3'-nucleotidase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000463934</td>
+                    <td class="organism-name">Streptomyces sp. HF10</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">inositol-3-phosphate synthase activity</span> <span class="function-item mf-function">3-deoxy-7-phosphoheptulonate synthase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000509706</td>
+                    <td class="organism-name">Streptomyces harbinensis</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-high">6</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">phenylacetate-CoA ligase activity</span> <span class="function-item mf-function">precorrin-6A synthase (deacetylating) activity</span> <span class="function-item mf-function">3-hydroxyacyl-CoA dehydrogenase activity</span> <span class="function-item mf-function">2-oxo-4-hydroxy-4-carboxy-5-ureidoimidazoline decarboxylase activity</span> <span class="function-item mf-function">undecaprenyl-diphosphatase activity</span> <span class="function-item mf-function">cobaltochelatase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000464558</td>
+                    <td class="organism-name">Streptomyces sp. GS7</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">undecaprenyl-diphosphatase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000031113</td>
+                    <td class="organism-name">Streptomyces sp. 769</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-medium">3</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">phosphatidylinositol alpha-mannosyltransferase activity</span> <span class="function-item mf-function">phosphoribosyl-ATP diphosphatase activity</span> <span class="function-item mf-function">glycolipid 1,6-alpha-mannosyltransferase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000429360</td>
+                    <td class="organism-name">Streptomyces sp. QHH-9511</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">oxidoreductase activity, acting on the aldehyde or oxo group of donors, iron-sulfur protein as acceptor</span> <span class="function-item mf-function">cobaltochelatase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000325763</td>
+                    <td class="organism-name">Streptomyces nodosus</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">urate oxidase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000320580</td>
+                    <td class="organism-name">Streptomyces qinzhouensis</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">urocanate hydratase activity</span> <span class="function-item mf-function">tRNA (adenine(58)-N1)-methyltransferase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000310490</td>
+                    <td class="organism-name">Streptomyces sp. So13.3</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">tRNA (adenine(58)-N1)-methyltransferase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000253868</td>
+                    <td class="organism-name">Streptomyces paludis</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">2</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">NADPH binding</span> <span class="function-item mf-function">1-deoxy-D-xylulose-5-phosphate reductoisomerase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000252004</td>
+                    <td class="organism-name">Streptomyces globosus</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">coenzyme F420 binding</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000189677</td>
+                    <td class="organism-name">Streptomyces niveus (Streptomyces spheroides)</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">phenylacetate-CoA ligase activity</span></td>
+                </tr>
+
+                <tr>
+                    <td class="strain-id">UP000595046</td>
+                    <td class="organism-name">Streptomyces bathyalis</td>
+                    <td class="count-cell count-zero">0</td>
+                    <td class="count-cell count-low">1</td>
+                    <td class="function-list"><span class="no-functions">None</span></td>
+                    <td class="function-list"><span class="function-item mf-function">stearoyl-[ACP] desaturase activity</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const filter = this.value.toLowerCase();
+            const table = document.getElementById('dataTable');
+            const rows = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const strainId = row.cells[0].textContent.toLowerCase();
+                const organism = row.cells[1].textContent.toLowerCase();
+                
+                if (strainId.includes(filter) || organism.includes(filter)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        });
+        
+        // Filter functionality
+        document.getElementById('filterSelect').addEventListener('change', function() {
+            const filter = this.value;
+            const table = document.getElementById('dataTable');
+            const rows = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const bpCount = parseInt(row.cells[2].textContent) || 0;
+                const mfCount = parseInt(row.cells[3].textContent) || 0;
+                
+                let show = true;
+                
+                switch(filter) {
+                    case 'with-absent':
+                        show = bpCount > 0 || mfCount > 0;
+                        break;
+                    case 'bp-only':
+                        show = bpCount > 0;
+                        break;
+                    case 'mf-only':
+                        show = mfCount > 0;
+                        break;
+                    case 'all':
+                    default:
+                        show = true;
+                        break;
+                }
+                
+                row.style.display = show ? '' : 'none';
+            }
+        });
+        
+        // Sorting functionality
+        function sortTable(columnIndex) {
+            const table = document.getElementById('dataTable');
+            let switching = true;
+            let direction = 'asc';
+            let switchCount = 0;
+            
+            while (switching) {
+                switching = false;
+                const rows = table.rows;
+                
+                for (let i = 1; i < rows.length - 1; i++) {
+                    let shouldSwitch = false;
+                    const x = rows[i].getElementsByTagName('td')[columnIndex];
+                    const y = rows[i + 1].getElementsByTagName('td')[columnIndex];
+                    
+                    let xValue = x.textContent.toLowerCase();
+                    let yValue = y.textContent.toLowerCase();
+                    
+                    // For numeric columns, parse as numbers
+                    if (columnIndex === 2 || columnIndex === 3) {
+                        xValue = parseInt(xValue) || 0;
+                        yValue = parseInt(yValue) || 0;
+                    }
+                    
+                    if (direction === 'asc') {
+                        if (xValue > yValue) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (direction === 'desc') {
+                        if (xValue < yValue) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchCount++;
+                } else {
+                    if (switchCount === 0 && direction === 'asc') {
+                        direction = 'desc';
+                        switching = true;
+                    }
+                }
+            }
+            
+            // Update sort indicators
+            const headers = table.getElementsByTagName('th');
+            for (let i = 0; i < headers.length; i++) {
+                const indicator = headers[i].querySelector('.sort-indicator');
+                if (indicator) {
+                    if (i === columnIndex) {
+                        indicator.textContent = direction === 'asc' ? '↑' : '↓';
+                    } else {
+                        indicator.textContent = '↕';
+                    }
+                }
+            }
+        }
+        
+        // Set initial filter to show only strains with absent functions if any exist
+        const hasAbsentStrains = document.querySelectorAll('.count-cell:not(.count-zero)').length > 0;
+        if (hasAbsentStrains) {
+            document.getElementById('filterSelect').value = 'with-absent';
+            document.getElementById('filterSelect').dispatchEvent(new Event('change'));
+        }
+    </script>
+</body>
+</html>
