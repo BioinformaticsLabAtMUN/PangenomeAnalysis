@@ -627,23 +627,6 @@ params.cdhit_mode = "accurate"
 
 If you use this pipeline, please cite:
 
-- **CD-HIT**: Fu et al. (2012) Bioinformatics 28:3150-3152
-- **Nextflow**: Di Tommaso et al. (2017) Nature Biotechnology 35:316-319
-- **Foldseek**: van Kempen et al. (2023) Nature Biotechnology
-- **UniProt**: The UniProt Consortium (2023) Nucleic Acids Research
-- **GOATools**: Klopfenstein et al. (2018) Scientific Reports 8:10872
-
-## Support
-
-For issues and questions:
-- Check the [Troubleshooting](#troubleshooting) section
-- Review Nextflow logs: `.nextflow.log`
-- Open an issue on the project repository
-
-## License
-
-This pipeline is distributed under [appropriate license]. See LICENSE file for details.
-
 ---
 
 **Last Updated**: January 2026  
