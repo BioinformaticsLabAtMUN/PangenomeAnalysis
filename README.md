@@ -539,19 +539,8 @@ nextflow run pangenome_uniprot.nf \
     --uniprot_max_workers 4
 ```
 
-#### 4. Memory Issues
-**Problem**: "Out of memory" errors during clustering
 
-**Solution**:
-```bash
-# Reduce threads and increase memory allocation
-nextflow run pangenome_uniprot.nf \
-    --threads 4 \
-    -with-docker \
-    --docker.runOptions '--memory=32g'
-```
-
-#### 5. Pipeline Stops Unexpectedly
+#### 4. Pipeline Stops Unexpectedly
 **Problem**: Process fails without clear error
 
 **Solution**:
