@@ -437,7 +437,7 @@ nextflow run /path/to/pangenome_uniprot.nf \
     --threads 8
 ```
 
-**Expected Runtime**: ~2-4 hours for 50 genomes with ~8,000 proteins each
+**Expected Runtime**: ~30 mins for 140 genomes with ~8,000 proteins each
 
 **Expected Output**:
 - Consolidated FASTA: ~400,000 total protein sequences
@@ -621,11 +621,6 @@ params.annotate_scope = "core"    // Only annotate core genes
 ```groovy
 // Use accurate mode
 params.cdhit_mode = "accurate"
-params.cdhit_identity = 0.70      // Stricter identity threshold
-
-// Comprehensive annotation
-params.annotate_scope = "all"
-params.max_alternatives_per_cluster = 5
 ```
 
 ## Citations
