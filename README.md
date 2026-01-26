@@ -500,35 +500,7 @@ nextflow run pangenome_uniprot.nf \
 
 ### Common Issues
 
-#### 1. "No FASTA files found"
-**Problem**: Pipeline can't find input files
-
-**Solution**:
-```bash
-# Check file extensions
-ls input_fastas/*.{fasta,faa,fa}
-
-# Verify directory parameter
-nextflow run pangenome_uniprot.nf --raw_input_directory $(pwd)/input_fastas
-```
-
-#### 2. "CD-HIT command not found"
-**Problem**: CD-HIT not in PATH
-
-**Solution**:
-```bash
-# Install CD-HIT
-conda install -c bioconda cd-hit
-
-# Or build from source
-wget https://github.com/weizhongli/cdhit/releases/download/V4.8.1/cd-hit-v4.8.1-2019-0228.tar.gz
-tar xzf cd-hit-v4.8.1-2019-0228.tar.gz
-cd cd-hit-v4.8.1-2019-0228
-make
-sudo make install
-```
-
-#### 3. "UniProt annotation failed"
+#### 1. "UniProt annotation failed"
 **Problem**: API requests timing out or rate limited
 
 **Solution**:
@@ -537,55 +509,6 @@ sudo make install
 nextflow run pangenome_uniprot.nf \
     --uniprot_batch_size 200 \
     --uniprot_max_workers 4
-```
-
-
-#### 4. Pipeline Stops Unexpectedly
-**Problem**: Process fails without clear error
-
-**Solution**:
-```bash
-# Enable detailed logging
-nextflow run pangenome_uniprot.nf -with-trace -with-report report.html
-
-# Check the trace file
-cat trace.txt
-
-# Resume from last checkpoint
-nextflow run pangenome_uniprot.nf -resume
-```
-
-### Validation Steps
-
-#### Check Input Files
-```bash
-# Count FASTA files
-ls input_fastas/*.faa | wc -l
-
-# Check FASTA format
-head -n 20 input_fastas/strain_001.faa
-
-# Verify metadata
-cat metadata.tsv | column -t
-```
-
-#### Monitor Resource Usage
-```bash
-# While pipeline is running
-top -u $USER          # CPU and memory
-df -h                 # Disk space
-```
-
-#### Verify Outputs
-```bash
-# Check core genome size
-wc -l output/uniprot_output/cdhit/core_genome/core_genes.txt
-
-# View top annotated genes
-head -n 20 output/uniprot_output/cdhit/annotations/dominant_alleles_core_summary.tsv
-
-# Check for errors in log
-grep -i error .nextflow.log
 ```
 
 ## Performance Optimization
