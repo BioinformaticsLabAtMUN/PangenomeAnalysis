@@ -539,6 +539,9 @@ params.cdhit_mode = "accurate"
 
 If you use this pipeline, please cite:
 
+Sadeghi Najabafadi, Saba (2026) Comparison of sequence-based vs structure-based
+pangenome analyses of the Streptomyces, Master's thesis, Memorial University of Newfoundland
+
 ---
 
 **Last Updated**: January 2026  
