@@ -129,8 +129,8 @@ process viewPangenome {
 
     output:
     path "pangenome_viz.log"
-    path "*_gene_*.png" optional true
-    path "*_no_heatmap.txt" optional true
+    path "*_gene_*.png", optional: true
+    path "*_no_heatmap.txt", optional: true
     
     script:
     """
@@ -750,7 +750,7 @@ process categorizeGOTerms {
     path "go_*_clusters.tsv"
     path "go_cluster_categorization_summary.txt"
     path "strain_cluster_analysis.tsv"
-    path "*.png" optional true
+    path "*.png", optional: true
     
     script:
     """
