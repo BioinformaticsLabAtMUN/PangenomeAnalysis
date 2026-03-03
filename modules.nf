@@ -19,7 +19,7 @@ process renameSequences {
     script:
     """
     # Unified script with auto-detection of taxonomy ID format
-    SCRIPT_PATH="${params.baseDir}/scriptse/unified_rename_sequences_simple_representative.py"
+    SCRIPT_PATH="${params.baseDir}/scripts/unified_rename_sequences_simple_representative.py"
     
     # Create dummy mapping for methods other than foldseek
     echo -e "UniProt_ID\\tPDB_file\\tStatus" > dummy_mapping.tsv
@@ -79,7 +79,7 @@ process generatePangenomeTables {
       done
 
     # Run the pangenome table builder
-    python ${params.baseDir}/scriptse/build_pangenome_tables.py \\
+    python ${params.baseDir}/scripts/build_pangenome_tables.py \\
         --input-dir input_fasta \\
         --output-dir . \\
         --name ${params.name_prefix}_${method} \\
@@ -109,7 +109,7 @@ process validatePangenome {
     conda activate pangenome_env
     
     # Run the validation script which now handles taxid|protein_id format
-    python ${params.baseDir}/scriptse/validate_pangenome.py \\
+    python ${params.baseDir}/scripts/validate_pangenome.py \\
     --gene-matrix ${gene_matrix} \\
     --allele-matrix ${allele_matrix} \\
     --input-dir ${input_directory} \\
@@ -156,7 +156,7 @@ process viewPangenome {
     
     # Run the visualization script
     echo "Running pangenome visualization..."
-    python ${params.baseDir}/scriptse/pan_viz.py \\
+    python ${params.baseDir}/scripts/pan_viz.py \\
         --input-dir . \\
         --output-dir . \\
         --name ${params.name_prefix}_${method} \\
@@ -193,7 +193,7 @@ process analyzeHeapsLaw {
     source /home/saba/anaconda3/etc/profile.d/conda.sh
     conda activate pangenome_env
 
-    python ${params.baseDir}/scriptse/heaps_analysis.py \\
+    python ${params.baseDir}/scripts/heaps_analysis.py \\
          --matrix ${gene_matrix} \\
          --labels ${gene_labels} \\
          --output . \\
@@ -233,7 +233,7 @@ process analyzeAndValidateCoreGenome {
     source /home/saba/anaconda3/etc/profile.d/conda.sh
     conda activate pangenome_env
 
-    python ${params.baseDir}/scriptse/core_genome_analysis.py \\
+    python ${params.baseDir}/scripts/core_genome_analysis.py \\
         --matrix ${gene_matrix} \\
         --labels ${gene_labels} \\
         --output-prefix ${params.name_prefix}
@@ -262,7 +262,7 @@ process extractDominantAllelesWithCore {
     script:
     """
     # Use new unified extraction script
-    python ${params.baseDir}/scriptse/extract_dominant_alleles.py \\
+    python ${params.baseDir}/scripts/extract_dominant_alleles.py \\
         --allele-matrix ${allele_matrix} \\
         --allele-labels ${allele_labels} \\
         --allele-names ${allele_names_tsv} \\
@@ -316,7 +316,7 @@ process annotateSmartDominantAlleles {
     conda activate pangenome_env
     
     # Use optimized batch UniProt annotation script
-    python ${params.baseDir}/scriptse/annotate_uniprot_batch.py \\
+    python ${params.baseDir}/scripts/annotate_uniprot_batch.py \\
         --input-summary ${all_summary} \\
         --core-summary ${core_summary} \\
         --annotate-scope ${params.annotate_scope} \\
@@ -384,7 +384,7 @@ process analyzeGeneStructure {
     pip install --no-cache-dir plotly || echo "Warning: Could not install plotly - interactive plots will be skipped"
     
     # Run gene-level structural analysis
-    python ${params.baseDir}/scriptse/analyze_gene_structure.py \\
+    python ${params.baseDir}/scripts/analyze_gene_structure.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -471,7 +471,7 @@ process analyzeFunctionalCore {
     pip install --no-cache-dir plotly scipy scikit-learn seaborn matplotlib numpy pandas
     
     # Run functional core genome analysis
-    python ${params.baseDir}/scriptse/analyze_functional_core.py \\
+    python ${params.baseDir}/scripts/analyze_functional_core.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -541,7 +541,7 @@ process clusterGOTermsWithGOATools {
     echo "=== GO Term Clustering with GOATools (Resnik similarity) for ${method} ==="
     
     # Run Python script for GO clustering using GOATools with Resnik similarity
-    python ${params.baseDir}/scriptse/cluster_go_terms_goatools.py \\
+    python ${params.baseDir}/scripts/cluster_go_terms_goatools.py \\
         --core-annotations ${core_annotations} \\
         --accessory-annotations ${accessory_annotations} \\
         --output-prefix ${params.name_prefix}_${method} \\
@@ -589,7 +589,7 @@ process analyzeRevigoFunctionalCore {
     pip install --no-cache-dir seaborn matplotlib numpy pandas scipy
     
     # Run Revigo analysis
-    python ${params.baseDir}/scriptse/analyze_revigo_functional_core.py \\
+    python ${params.baseDir}/scripts/analyze_revigo_functional_core.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -670,7 +670,7 @@ process analyzeClusteredFunctionalCore {
     pip install --no-cache-dir seaborn matplotlib numpy pandas scipy
     
     # Run GOATools-based analysis BUT emit Revigo-style filenames
-    python ${params.baseDir}/scriptse/clustered_functional_core.py \\
+    python ${params.baseDir}/scripts/clustered_functional_core.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -759,7 +759,7 @@ process categorizeGOTerms {
     # Install matplotlib if not present
     pip install --no-cache-dir matplotlib seaborn || echo "Visualization libraries not available"
     
-    python ${params.baseDir}/scriptse/categorize_go_terms.py \\
+    python ${params.baseDir}/scripts/categorize_go_terms.py \\
         --all-annotations ${all_annotations} \\
         --gene-matrix ${gene_matrix} \\
         --gene-labels ${gene_labels} \\
@@ -798,7 +798,7 @@ process checkEssentialGenes {
     source /home/saba/anaconda3/etc/profile.d/conda.sh
     conda activate pangenome_env
 
-    python ${params.baseDir}/scriptse/check_essential_genes.py \\
+    python ${params.baseDir}/scripts/check_essential_genes.py \\
         --core-genes ${core_genes} \\
         --allele-names ${allele_names} \\
         --sco-mapping ${sco_mapping} \\
@@ -828,7 +828,7 @@ process generateCoreFastas {
     source /home/saba/anaconda3/etc/profile.d/conda.sh
     conda activate pangenome_env
     
-    python ${params.baseDir}/scriptse/generate_core_fastas.py \\
+    python ${params.baseDir}/scripts/generate_core_fastas.py \\
         --input-dir ${input_directory} \\
         --core-genes ${core_genes} \\
         --allele-names ${allele_names} \\
