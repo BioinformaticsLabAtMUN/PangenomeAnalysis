@@ -106,7 +106,7 @@ Command line values always take priority over `nextflow.config`.
 
 ## How conda environments work
 
-You do **not** need to create or activate any conda environment yourself. When you run the pipeline for the first time, Nextflow reads the `.yml` files in `envs/` and builds the environments automatically. This happens once and takes about 5–10 minutes. Every subsequent run reuses the cached environments instantly.
+You do **not** need to create or activate any conda environment yourself. When you run the pipeline for the first time, Nextflow reads the `.yml` files in `envs/` and builds the environments automatically. This happens once and takes about several minutes. Every subsequent run reuses the cached environments instantly.
 
 The environments are saved to `.conda_cache/` inside your working directory. If you delete that folder, Nextflow rebuilds them on the next run.
 
