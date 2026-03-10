@@ -79,7 +79,7 @@ process consolidateSequences {
     def has_taxid_arg  = params.has_taxid  ? 'true' : 'false'
     def output_taxid_arg = params.output_taxid ? 'true' : 'false'
     """
-    python $projectDir/input_scripts/consolidate_sequences.py \\
+    python $projectDir/scripts/consolidate_sequences.py \\
         ${input_dir} \\
         consolidated.faa \\
         metadata.tsv \\
