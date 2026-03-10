@@ -28,7 +28,7 @@ nextflow -version   # should print a version number
 
 **Conda** (Miniconda is fine)
 - Download from: https://docs.conda.io/en/latest/miniconda.html
-- All Python packages are installed automatically by the pipeline on first run — you do not need to install anything else manually.
+- All Python packages are installed automatically by the pipeline on first run. You do not need to install anything else manually.
 
 ---
 
