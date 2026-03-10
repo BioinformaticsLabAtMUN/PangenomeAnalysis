@@ -1,0 +1,24 @@
+# =============================================================================
+#  envs/swiftortho_env.yml
+#
+#  Conda environment for the SwiftOrtho clustering process.
+#  SwiftOrtho requires BLAST+ (blastp) and a specific Python setup,
+#  kept separate from pangenome_env to avoid dependency conflicts.
+# =============================================================================
+
+name: swiftortho_env
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.8      # SwiftOrtho was developed and tested against 3.8
+  - pip
+  - blast>=2.12     # provides blastp, which SwiftOrtho calls internally
+  - numpy
+  - scipy
+
+  - pip:
+    - networkx>=2.8  # used by SwiftOrtho's clustering step

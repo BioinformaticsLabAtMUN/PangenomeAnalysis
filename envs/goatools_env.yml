@@ -1,0 +1,27 @@
+# =============================================================================
+#  envs/goatools_env.yml
+#
+#  Separate conda environment for the GOATools GO-term clustering process.
+#  GOATools has specific dependencies that conflict with some packages
+#  in pangenome_env, so it gets its own environment.
+# =============================================================================
+
+name: goatools_env
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - numpy>=1.24
+  - pandas>=2.0
+  - matplotlib>=3.7
+  - scipy>=1.10
+
+  - pip:
+    - goatools>=1.3.1    # GO term analysis and semantic similarity
+    - biopython>=1.81
+    - tqdm>=4.65
