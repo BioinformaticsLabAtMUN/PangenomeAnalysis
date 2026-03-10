@@ -44,7 +44,7 @@ process renameSequences {
     script:
  
     """
-    SCRIPT_PATH="$projectDir/scriptse/unified_rename_sequences_simple_representative.py"
+    SCRIPT_PATH="$projectDir/scripts/unified_rename_sequences_simple_representative.py"
 
     echo -e "UniProt_ID\\tPDB_file\\tStatus" > dummy_mapping.tsv
 
@@ -99,7 +99,7 @@ process generatePangenomeTables {
         fi
       done
 
-    python $projectDir/scriptse/build_pangenome_tables.py \\
+    python $projectDir/scripts/build_pangenome_tables.py \\
         --input-dir input_fasta \\
         --output-dir . \\
         --name ${params.name_prefix}_${method} \\
@@ -132,7 +132,7 @@ process validatePangenome {
     """
     export PYTHONUNBUFFERED=1
 
-    python $projectDir/scriptse/validate_pangenome.py \\
+    python $projectDir/scripts/validate_pangenome.py \\
         --gene-matrix ${gene_matrix} \\
         --allele-matrix ${allele_matrix} \\
         --input-dir ${input_directory} \\
@@ -169,7 +169,7 @@ process viewPangenome {
         DATA_SUMMARY_PARAM="--data-summary ${params.data_summary_file}"
     fi
 
-    python $projectDir/scriptse/pan_viz.py \\
+    python $projectDir/scripts/pan_viz.py \\
         --input-dir . \\
         --output-dir . \\
         --name ${params.name_prefix}_${method} \\
@@ -208,7 +208,7 @@ process analyzeHeapsLaw {
 
     script:
     """
-    python $projectDir/scriptse/heaps_analysis.py \\
+    python $projectDir/scripts/heaps_analysis.py \\
         --matrix ${gene_matrix} \\
         --labels ${gene_labels} \\
         --output . \\
@@ -248,7 +248,7 @@ process analyzeAndValidateCoreGenome {
     echo "Input matrix: ${gene_matrix}"
     echo "Input labels: ${gene_labels}"
 
-    python $projectDir/scriptse/core_genome_analysis.py \\
+    python $projectDir/scripts/core_genome_analysis.py \\
         --matrix ${gene_matrix} \\
         --labels ${gene_labels} \\
         --output-prefix ${params.name_prefix}
@@ -281,7 +281,7 @@ process extractDominantAllelesWithCore {
 
     script: 
     """
-    python $projectDir/scriptse/extract_dominant_alleles.py \\
+    python $projectDir/scripts/extract_dominant_alleles.py \\
         --allele-matrix ${allele_matrix} \\
         --allele-labels ${allele_labels} \\
         --allele-names ${allele_names_tsv} \\
@@ -334,7 +334,7 @@ process annotateSmartDominantAlleles {
     """
     echo "Using UniProt batch annotation"
 
-    python $projectDir/scriptse/annotate_uniprot_batch.py \\
+    python $projectDir/scripts/annotate_uniprot_batch.py \\
         --input-summary ${all_summary} \\
         --core-summary ${core_summary} \\
         --annotate-scope ${params.annotate_scope} \\
@@ -388,7 +388,7 @@ process analyzeGeneStructure {
     export MPLBACKEND=Agg
     export QT_QPA_PLATFORM=offscreen
 
-    python $projectDir/scriptse/analyze_gene_structure.py \\
+    python $projectDir/scripts/analyze_gene_structure.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -460,7 +460,7 @@ process analyzeFunctionalCore {
     export MPLBACKEND=Agg
     export QT_QPA_PLATFORM=offscreen
 
-    python $projectDir/scriptse/analyze_functional_core.py \\
+    python $projectDir/scripts/analyze_functional_core.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -516,7 +516,7 @@ process clusterGOTermsWithGOATools {
     """
     echo "=== GO Term Clustering with GOATools (Resnik similarity) for ${method} ==="
 
-    python $projectDir/scriptse/cluster_go_terms_goatools.py \\
+    python $projectDir/scripts/cluster_go_terms_goatools.py \\
         --core-annotations ${core_annotations} \\
         --accessory-annotations ${accessory_annotations} \\
         --output-prefix ${params.name_prefix}_${method} \\
@@ -558,7 +558,7 @@ process analyzeRevigoFunctionalCore {
     export MPLBACKEND=Agg
     export QT_QPA_PLATFORM=offscreen
 
-    python $projectDir/scriptse/analyze_revigo_functional_core.py \\
+    python $projectDir/scripts/analyze_revigo_functional_core.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -628,7 +628,7 @@ process analyzeClusteredFunctionalCore {
     export MPLBACKEND=Agg
     export QT_QPA_PLATFORM=offscreen
 
-    python $projectDir/scriptse/clustered_functional_core.py \\
+    python $projectDir/scripts/clustered_functional_core.py \\
         --gene-matrix ${gene_matrix_npz} \\
         --gene-labels ${gene_labels} \\
         --core-genes ${core_genes} \\
@@ -687,7 +687,7 @@ process annotateAllDominantAlleles {
 
     script:
     """
-    python $projectDir/scriptse/annotate_core_genes_sequential.py \\
+    python $projectDir/scripts/annotate_core_genes_sequential.py \\
         --input-summary ${dominant_summary_tsv} \\
         --output-annotations ${params.name_prefix}_all_dominant_annotated.tsv \\
         --output-merged ${params.name_prefix}_all_dominant_with_annotations.tsv \\
@@ -720,7 +720,7 @@ process categorizeGOTerms {
     """
     echo "Categorizing GO terms with Revigo clusters..."
 
-    python $projectDir/scriptse/categorize_go_terms.py \\
+    python $projectDir/scripts/categorize_go_terms.py \\
         --all-annotations ${all_annotations} \\
         --gene-matrix ${gene_matrix} \\
         --gene-labels ${gene_labels} \\
