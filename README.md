@@ -150,25 +150,6 @@ nextflow run main.nf -resume
 `-resume` tells Nextflow to skip any steps that already finished successfully. You can always resume safely — it never redoes completed work.
 
 ---
-
-## What to expect on first run
-
-```
-N E X T F L O W  ~  version 24.x
-Launching `main.nf`
-
-executor > local
-[aa/1b2c3d] consolidateSequences          [100%] 1 of 1 ✔
-[bb/2c3d4e] runCDHIT                      [100%] 1 of 1 ✔
-[cc/3d4e5f] renameCDHITSequences          [100%] 1 of 1 ✔
-[dd/4e5f6g] generateCDHITPangenomeTables  [  0%] 0 of 1, running
-...
-```
-
-For 140 genomes with ~8,000 proteins each, expect roughly 1–2 hours on a 12-core machine.
-
----
-
 ## Output files
 
 Everything is written to `output/uniprot_output/` in your working directory:
