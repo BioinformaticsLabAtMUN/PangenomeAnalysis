@@ -197,7 +197,7 @@ nextflow run main.nf --uniprot_max_workers 4 --uniprot_batch_size 200
 ```
 
 **Run crashed partway through**
-Re-run with `-resume` — Nextflow picks up where it left off:
+Re-run with `-resume`. Nextflow picks up where it left off:
 ```bash
 nextflow run main.nf -resume
 ```
