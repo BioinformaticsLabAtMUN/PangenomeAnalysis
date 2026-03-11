@@ -672,7 +672,7 @@ process analyzeClusteredFunctionalCore {
 // -----------------------------------------------------------------------------
 //  annotateAllDominantAlleles
 // -----------------------------------------------------------------------------
-process annotateAllDominantAlleles { 
+/*process annotateAllDominantAlleles { 
     conda "$projectDir/envs/pangenome_env.yml"
 
     publishDir "${params.enhanced_output}/all_dominant_annotations/${method}", mode: 'copy'
@@ -693,7 +693,7 @@ process annotateAllDominantAlleles {
         --output-merged ${params.name_prefix}_all_dominant_with_annotations.tsv \\
         --max-alternatives 30
     """
-}
+}*/
 
 
 // -----------------------------------------------------------------------------
