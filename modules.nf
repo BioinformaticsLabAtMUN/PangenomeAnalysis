@@ -158,8 +158,8 @@ process viewPangenome {
 
     output:
     path "pangenome_viz.log"
-    path "*_gene_*.png" optional true
-    path "*_no_heatmap.txt" optional true
+    path "*_gene_*.png", optional: true
+    path "*_no_heatmap.txt", optional: true
 
     script:
     """
@@ -237,10 +237,10 @@ process analyzeAndValidateCoreGenome {
 
     output:
     tuple path("${params.name_prefix}_core_genes.txt"),
-          path("${params.name_prefix}_core_matrix.npz"),
-          path("${params.name_prefix}_frequency_estimates.csv"),
-          path("${params.name_prefix}_beta_binomial_results.csv"),
-          path("${params.name_prefix}_beta_binomial_fit.png", optional: true)
+        path("${params.name_prefix}_core_matrix.npz"),
+        path("${params.name_prefix}_frequency_estimates.csv"),
+        path("${params.name_prefix}_beta_binomial_results.csv"), emit: results
+        path "${params.name_prefix}_beta_binomial_fit.png", optional: true, emit: plot
 
     script:
     """
@@ -714,7 +714,7 @@ process categorizeGOTerms {
     path "go_*_clusters.tsv"
     path "go_cluster_categorization_summary.txt"
     path "strain_cluster_analysis.tsv"
-    path "*.png" optional true
+    path "*.png", optional: true
 
     script:
     """
