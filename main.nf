@@ -71,23 +71,26 @@ process consolidateSequences {
     path input_dir
 
     output:
-    path "consolidated.faa",    emit: consolidated_fasta
-    path "metadata.tsv",        emit: metadata
-    path "shared_headers.tsv",  emit: shared_headers
+    path "consolidated.faa",       emit: consolidated_fasta
+    path "consolidated_swift.faa", emit: swift_fasta
+    path "shared_headers.tsv",     emit: shared_headers
+    path "missing_headers.txt",    emit: missing_headers
+    path "descriptions.tsv",       emit: descriptions
+    path "organism_map.tsv",       emit: organism_map
 
     script:
-    def has_taxid_arg  = params.has_taxid  ? 'true' : 'false'
-    def output_taxid_arg = params.output_taxid ? 'true' : 'false'
     """
     python $projectDir/scripts/consolidate_sequences.py \\
         ${input_dir} \\
         consolidated.faa \\
-        metadata.tsv \\
+        consolidated_swift.faa \\
         shared_headers.tsv \\
-        ${has_taxid_arg} \\
-        ${output_taxid_arg}
+        missing_headers.txt \\
+        descriptions.tsv \\
+        organism_map.tsv
     """
 }
+
 
 
 // ============================================================================
@@ -334,7 +337,7 @@ workflow {
                 cdhit_tables.map{ tuple(it[1], it[3]) },
                 'cdhit'
             )
-            core_genes_ch = core_genome_results.map { it[0] }
+            core_genes_ch = core_genome_results.results.map { it[0] }
 
             // Dominant allele extraction
             cdhit_combined  = cdhit_tables.combine(renamed_cdhit.map{ tuple(it[0], it[1]) })
@@ -447,7 +450,7 @@ workflow {
                 swift_tables.map{ tuple(it[1], it[3]) },
                 'swiftortho'
             )
-            core_genes_swift_ch = core_genome_results_swift.map { it[0] }
+            core_genes_swift_ch = core_genome_results_swift.results.map { it[0] }
 
             swift_combined  = swift_tables.combine(renamed_swift.map{ tuple(it[0], it[1]) })
             swift_with_core = swift_combined.combine(core_genes_swift_ch)
@@ -570,7 +573,7 @@ workflow {
                 foldseek_tables.map { tuple(it[1], it[3]) },
                 'foldseek'
             )
-            core_genes_foldseek_ch = core_genome_results_foldseek.map { it[0] }
+            core_genes_foldseek_ch = core_genome_results_foldseek.results.map { it[0] }
 
             // Dominant alleles + annotation
             foldseek_combined  = foldseek_tables.combine(renamed_foldseek.map { tuple(it[0], it[1]) })
