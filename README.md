@@ -25,6 +25,7 @@ curl -s https://get.nextflow.io | bash
 sudo mv nextflow /usr/local/bin/
 nextflow -version   # should print a version number
 ```
+Nextflow requires Java. If you don't have java installed, follow the instructions provided in the Nexflow website at https://www.nextflow.io/
 
 **Conda** (Miniconda is fine)
 - Download from: https://docs.conda.io/en/latest/miniconda.html
