@@ -27,8 +27,8 @@ process renameSequences {
    
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.renamed_directory}/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/renamed/${method}"
+    publishDir { "${params.renamed_directory}/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/renamed/${method}" }
 
     input:
     tuple path(cluster_file), path(fasta_file)
