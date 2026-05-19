@@ -73,8 +73,8 @@ process renameSequences {
 process generatePangenomeTables {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/pangenome_tables/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/pangenome_tables/${method}"
+    publishDir { "${params.enhanced_output}/pangenome_tables/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/pangenome_tables/${method}" }
 
     input:
     tuple path(renamed_fasta), path(allele_names), val(method)
@@ -115,8 +115,8 @@ process generatePangenomeTables {
 process validatePangenome {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/validation/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/validate_pangenome/${method}"
+    publishDir { "${params.enhanced_output}/validation/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/validate_pangenome/${method}" }
     debug true
 
     input:
@@ -150,8 +150,8 @@ process validatePangenome {
 process viewPangenome {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/pangenome_visualizations/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/visualize_pangenome/${method}"
+    publishDir { "${params.enhanced_output}/pangenome_visualizations/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/visualize_pangenome/${method}" }
 
     input:
     tuple path(allele_matrix), path(gene_matrix), path(allele_labels), path(gene_labels), val(method)
@@ -193,8 +193,8 @@ process viewPangenome {
 process analyzeHeapsLaw {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/heaps_analysis/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/heaps_law/${method}"
+    publishDir { "${params.enhanced_output}/heaps_analysis/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/heaps_law/${method}" }
 
     input:
     tuple path(gene_matrix), path(gene_labels)
@@ -228,8 +228,8 @@ process analyzeHeapsLaw {
 process analyzeAndValidateCoreGenome {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/core_genome/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/core/${method}"
+    publishDir { "${params.enhanced_output}/core_genome/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/core/${method}" }
 
     input:
     tuple path(gene_matrix), path(gene_labels)
@@ -264,8 +264,8 @@ process analyzeAndValidateCoreGenome {
 process extractDominantAllelesWithCore {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/dominant_alleles/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/dominant_alleles/${method}"
+    publishDir { "${params.enhanced_output}/dominant_alleles/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/dominant_alleles/${method}" }
 
     input:
     tuple path(allele_matrix), path(gene_matrix),
@@ -302,8 +302,8 @@ process extractDominantAllelesWithCore {
 process annotateSmartDominantAlleles {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/annotations/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/annotations/${method}"
+    publishDir { "${params.enhanced_output}/annotations/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/annotations/${method}" }
 
     time '4h'
     memory '8 GB'
@@ -356,8 +356,8 @@ process annotateSmartDominantAlleles {
 process analyzeGeneStructure {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/gene_structure_analysis/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/gene_structure_analysis/${method}"
+    publishDir { "${params.enhanced_output}/gene_structure_analysis/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/gene_structure_analysis/${method}" }
     debug true
 
     input:
@@ -431,8 +431,8 @@ process analyzeGeneStructure {
 process analyzeFunctionalCore {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/functional_core_analysis/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/functional_core_analysis/${method}"
+    publishDir { "${params.enhanced_output}/functional_core_analysis/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/functional_core_analysis/${method}" }
     debug true
 
     input:
@@ -496,8 +496,8 @@ process clusterGOTermsWithGOATools {
     // its own separate environment file.
     conda "$projectDir/envs/goatools_env.yml"
 
-    publishDir "${params.enhanced_output}/goatools_clustering/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/goatools_clustering/${method}"
+    publishDir { "${params.enhanced_output}/goatools_clustering/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/goatools_clustering/${method}" }
 
     input:
     tuple path(core_annotations), path(accessory_annotations), val(method)
@@ -535,8 +535,8 @@ process clusterGOTermsWithGOATools {
 process analyzeRevigoFunctionalCore {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/revigo_functional_core_analysis/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/revigo_functional_core_analysis/${method}"
+    publishDir { "${params.enhanced_output}/revigo_functional_core_analysis/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/revigo_functional_core_analysis/${method}" }
     debug true
 
     input:
@@ -605,8 +605,8 @@ process analyzeRevigoFunctionalCore {
 process analyzeClusteredFunctionalCore {
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/clustered_functional_core_analysis/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/clustered_functional_core_analysis/${method}"
+    publishDir { "${params.enhanced_output}/clustered_functional_core_analysis/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/clustered_functional_core_analysis/${method}" }
     debug true
 
     input:
@@ -702,8 +702,8 @@ process analyzeClusteredFunctionalCore {
 process categorizeGOTerms { 
     conda "$projectDir/envs/pangenome_env.yml"
 
-    publishDir "${params.enhanced_output}/go_categorization/${method}", mode: 'copy'
-    storeDir "${params.baseDir}/cache/go_categorization/${method}"
+    publishDir { "${params.enhanced_output}/go_categorization/${method}" }, mode: 'copy'
+    storeDir   { "${params.baseDir}/cache/go_categorization/${method}" }
 
     input:
     tuple path(all_annotations), path(gene_matrix), path(gene_labels),
