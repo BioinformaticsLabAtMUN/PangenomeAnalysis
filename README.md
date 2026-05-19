@@ -35,14 +35,14 @@ Nextflow requires Java. If you don't have java installed, follow the instruction
 
 ## Downloading PDB files for Foldseek
 
-If you are running Foldseek clustering, you need AlphaFold PDB files for your proteins. A download script is provided in the `Download PDBs/` directory:
+If you are running Foldseek clustering, you need AlphaFold PDB files for your proteins. These PDF files have to be stored in the pdb_directory defined in the nextflow.config file. A download script is provided in the `Download PDBs/` directory:
 
 ```bash
 cd "Download PDBs"
 bash download_pdbs.sh
 ```
 
-See `Download PDBs/README.md` for full instructions on how to use the script.
+See `Download PDBs/README.md` for full instructions on how to use this script.
 
 If you already have Foldseek clusters from a previous run, you can skip this by setting `use_existing_foldseek_clusters = true` in `nextflow.config`.
 
