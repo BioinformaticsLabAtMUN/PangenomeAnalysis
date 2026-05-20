@@ -85,7 +85,7 @@ fasta_foldseek/
 A tab-separated file with one row per strain. Example:
 
 ```
-Proteome_ID    Organism                     Strain
+Proteome Id    Organism                     Strain
 UP000000377    Streptomyces coelicolor      A3(2)
 UP000000428    Streptomyces avermitilis     MA-4680
 ```
