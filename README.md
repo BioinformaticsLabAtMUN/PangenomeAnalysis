@@ -60,7 +60,8 @@ pipeline/
 │   ├── goatools_env.yml
 │   └── swiftortho_env.yml
 ├── scripts/               ← all Python scripts live here
-├── fasta_foldseek/        ← your input FASTA files go here
+├── fasta_foldseek/        ← your input FASTA files go here - named as "proteome id".fa
+├── GTFs/                  ← your input GTF files go here - named as "proteome id".gtf 
 └── my_proteome_metadata.tsv
 ```
 
@@ -89,6 +90,16 @@ UP000000377    Streptomyces coelicolor      A3(2)
 UP000000428    Streptomyces avermitilis     MA-4680
 ```
 
+### 3. GTF files (required)
+
+One `.gtf` file per strain, all in the same directory. The pipeline reads all files in that directory automatically.
+
+```
+GTFs/
+├── UP000000377.gtf
+├── UP000000428.gtf
+└── ...
+```
 ---
 
 ## How to change settings
@@ -120,7 +131,7 @@ Command line values always take priority over `nextflow.config`.
 
 ## How conda environments work
 
-You do **not** need to create or activate any conda environment yourself. When you run the pipeline for the first time, Nextflow reads the `.yml` files in `envs/` and builds the environments automatically. This happens once and takes about several minutes. Every subsequent run reuses the cached environments instantly.
+You do **not** need to create or activate any conda environment yourself. When you run the pipeline for the first time, Nextflow reads the `.yml` files in `envs/` and builds the environments automatically. This happens once and takes about several minutes. Every subsequent run reuses the cached environments instantly. At the first run, an error might occur asking you to run some coda commands to accept the terms of use.
 
 The environments are saved to `.conda_cache/` inside your working directory. If you delete that folder, Nextflow rebuilds them on the next run.
 
