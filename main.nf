@@ -397,25 +397,7 @@ workflow {
 
                 revigo_functional_results_cdhit = analyzeRevigoFunctionalCoreCDHIT(revigo_functional_input_cdhit_ch)
             } else {
-                log.info "Running analyzeRevigoFunctionalCore with placeholder Revigo files for testing"
-
-                revigo_cdhit_bp_ch = Channel.of("Name\tTermID\tFrequency\tValue\tUniqueness\tDispensability\tRepresentative\nplaceholder\tGO:0000001\t1\t1.0\t1.0\t0.0\t1")
-                    .collectFile(name: 'placeholder_bp.tsv', newLine: true, storeDir: "${params.baseDir}/temp")
-                revigo_cdhit_mf_ch = Channel.of("Name\tTermID\tFrequency\tValue\tUniqueness\tDispensability\tRepresentative\nplaceholder\tGO:0000001\t1\t1.0\t1.0\t0.0\t1")
-                    .collectFile(name: 'placeholder_mf.tsv', newLine: true, storeDir: "${params.baseDir}/temp")
-
-                revigo_functional_input_cdhit_ch = gene_matrix_npz_ch
-                    .combine(gene_labels_ch)
-                    .combine(core_genes_ch)
-                    .combine(core_annotations_ch)
-                    .combine(proteome_metadata_ch)
-                    .combine(revigo_cdhit_bp_ch)
-                    .combine(revigo_cdhit_mf_ch)
-                    .map { matrix, labels, core_genes, core_ann, proteome_metadata, revigo_bp, revigo_mf ->
-                        tuple(matrix, labels, core_genes, core_ann, proteome_metadata, revigo_bp, revigo_mf, 'cdhit')
-                    }
-
-                revigo_functional_results_cdhit = analyzeRevigoFunctionalCoreCDHIT(revigo_functional_input_cdhit_ch)
+            log.info "Skipping Revigo functional analysis for CD-HIT - Revigo files not found"
             }
         }
 
