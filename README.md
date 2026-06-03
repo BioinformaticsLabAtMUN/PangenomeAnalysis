@@ -35,14 +35,14 @@ Nextflow requires Java. If you don't have java installed, follow the instruction
 
 ## Downloading PDB files for Foldseek
 
-If you are running Foldseek clustering, you need AlphaFold PDB files for your proteins. A download script is provided in the `Download PDBs/` directory:
+If you are running Foldseek clustering, you need AlphaFold PDB files for your proteins. These PDF files have to be stored in the pdb_directory defined in the nextflow.config file. A download script is provided in the `Download PDBs/` directory:
 
 ```bash
 cd "Download PDBs"
 bash download_pdbs.sh
 ```
 
-See `Download PDBs/README.md` for full instructions on how to use the script.
+See `Download PDBs/README.md` for full instructions on how to use this script.
 
 If you already have Foldseek clusters from a previous run, you can skip this by setting `use_existing_foldseek_clusters = true` in `nextflow.config`.
 
@@ -60,7 +60,8 @@ pipeline/
 │   ├── goatools_env.yml
 │   └── swiftortho_env.yml
 ├── scripts/               ← all Python scripts live here
-├── fasta_foldseek/        ← your input FASTA files go here
+├── fasta_foldseek/        ← your input FASTA files go here - named as "proteome id".fa
+├── GTFs/                  ← your input GTF files go here - named as "proteome id".gtf 
 └── my_proteome_metadata.tsv
 ```
 
@@ -84,11 +85,21 @@ fasta_foldseek/
 A tab-separated file with one row per strain. Example:
 
 ```
-Proteome_ID    Organism                     Strain
+Proteome Id    Organism                     Strain
 UP000000377    Streptomyces coelicolor      A3(2)
 UP000000428    Streptomyces avermitilis     MA-4680
 ```
 
+### 3. GTF files (required)
+
+One `.gtf` file per strain, all in the same directory. The pipeline reads all files in that directory automatically.
+
+```
+GTFs/
+├── UP000000377.gtf
+├── UP000000428.gtf
+└── ...
+```
 ---
 
 ## How to change settings
@@ -120,7 +131,7 @@ Command line values always take priority over `nextflow.config`.
 
 ## How conda environments work
 
-You do **not** need to create or activate any conda environment yourself. When you run the pipeline for the first time, Nextflow reads the `.yml` files in `envs/` and builds the environments automatically. This happens once and takes about several minutes. Every subsequent run reuses the cached environments instantly.
+You do **not** need to create or activate any conda environment yourself. When you run the pipeline for the first time, Nextflow reads the `.yml` files in `envs/` and builds the environments automatically. This happens once and takes about several minutes. Every subsequent run reuses the cached environments instantly. At the first run, an error might occur asking you to run some coda commands to accept the terms of use.
 
 The environments are saved to `.conda_cache/` inside your working directory. If you delete that folder, Nextflow rebuilds them on the next run.
 
