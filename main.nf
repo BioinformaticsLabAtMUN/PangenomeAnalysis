@@ -314,6 +314,7 @@ workflow {
                                  file(params.revigo_cdhit_mf_file).exists()
 
             if (!hasRevigoFiles) {
+                //temp fix
                 log.warn "CD-HIT Revigo files not found - skipping Revigo-based functional analysis"
             }
 
