@@ -1,0 +1,143 @@
+Matplotlib is building the font cache; this may take a moment.
+Loading matrix from Strep_cdhit_strain_by_gene.npz
+Loading labels from Strep_cdhit_strain_by_gene.npz.labels.txt
+Matrix dimensions: (30406, 9)
+Number of row labels: 30406
+Number of column labels: 9
+Computing pan/core genome sizes...
+Matrix shape: (30406, 9)
+Generating pan/core curves from shuffled strains
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 10 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 20 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 30 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 40 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 50 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 60 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 70 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 80 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 90 of 100
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+		Processed genome 1/9
+	Iteration 100 of 100
+		Processed genome 1/9
+Creating output DataFrame...
+Pan-genome sizes range: 5748.0 - 30406.0
+Core-genome sizes range: 1548.0 - 9271.0
+Fitting Heaps law...
+Starting Heaps law fitting...
+Fitting 100 iterations...
+	Fitted iteration 1/100
+	Fitted iteration 11/100
+	Fitted iteration 21/100
+	Fitted iteration 31/100
+	Fitted iteration 41/100
+	Fitted iteration 51/100
+	Fitted iteration 61/100
+	Fitted iteration 71/100
+	Fitted iteration 81/100
+	Fitted iteration 91/100
+Calculating summary statistics...
+Saving results...
+Saved plot to heaps_law_plot.png
+
+Heaps Law Analysis Results:
+Alpha: 0.587 (CI: 0.514 - 0.713)
+Kappa: 8312.820
+Pangenome status: open

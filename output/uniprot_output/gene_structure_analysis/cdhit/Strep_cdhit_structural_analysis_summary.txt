@@ -1,0 +1,39 @@
+GENE-LEVEL STRUCTURAL ANALYSIS SUMMARY
+=============================================
+Analysis Date: 2026-07-11 00:43:16
+
+DATASET OVERVIEW:
+  Total strains analyzed: 9
+  Total genes in pangenome: 30,406
+  Core genes (ML-defined): 2,156
+
+CORE GENOME STRUCTURE:
+  Mean core coverage: 96.87%
+  Coverage range: 71.8% - 100.0%
+  Standard deviation: 9.40%
+  Strains with <90% coverage: 1
+
+GENE FREQUENCY DISTRIBUTION:
+  Unique genes (1 strain): 17,348 (57.1%)
+  Rare genes (2-5% strains): 0 (0.0%)
+  Accessory genes (5-95%): 28,250 (92.9%)
+  Core genes (≥95% strains): 1,548 (5.1%)
+
+UNIQUE GENES:
+  Mean per strain: 1928 genes
+  Range: 552-4203 genes
+  Total unique genes: 17,348
+
+MISSING CORE GENES:
+  Strains with missing core genes: 1
+  Mean missing per strain: 67.6
+  Maximum missing: 608
+
+FILES GENERATED:
+  • core_genome_structural_analysis.tsv - Core coverage per strain
+  • unique_genes_per_strain_analysis.tsv - Unique genes analysis
+  • gene_frequency_analysis.tsv - Frequency of all genes
+  • missing_core_genes_structural.tsv - Missing core genes per strain
+  • frequently_missing_core_genes_structural.tsv - Most frequently missing genes
+  • Multiple visualization PNG files
+  • interactive_core_coverage_analysis.html - Interactive plot (if available)

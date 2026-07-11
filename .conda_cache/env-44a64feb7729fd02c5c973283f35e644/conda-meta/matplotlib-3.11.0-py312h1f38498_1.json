@@ -1,0 +1,34 @@
+{
+  "name": "matplotlib",
+  "version": "3.11.0",
+  "build": "py312h1f38498_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "subdir": "osx-arm64",
+  "fn": "matplotlib-3.11.0-py312h1f38498_1.conda",
+  "md5": "89a99a949366a0d94807e8ae7621b0e1",
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/matplotlib-3.11.0-py312h1f38498_1.conda",
+  "sha256": "fb401f177604ae5b7c3f702ddfe7d3642225799e33df672d08c7e5eae88bdbe6",
+  "depends": [
+    "matplotlib-base >=3.11.0,<3.11.1.0a0",
+    "python >=3.12,<3.13.0a0",
+    "python_abi 3.12.* *_cp312",
+    "tornado >=5"
+  ],
+  "constrains": [],
+  "license": "PSF-2.0",
+  "timestamp": 1782829652000,
+  "size": 14839,
+  "requested_spec": "matplotlib[version='>=3.7']",
+  "package_tarball_full_path": "/opt/homebrew/Caskroom/miniconda/base/pkgs/matplotlib-3.11.0-py312h1f38498_1.conda",
+  "extracted_package_dir": "/opt/homebrew/Caskroom/miniconda/base/pkgs/matplotlib-3.11.0-py312h1f38498_1",
+  "files": [],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": []
+  },
+  "link": {
+    "source": "/opt/homebrew/Caskroom/miniconda/base/pkgs/matplotlib-3.11.0-py312h1f38498_1",
+    "type": 1
+  }
+}

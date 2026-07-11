@@ -1,0 +1,11 @@
+prefix=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: raqm
+Description: A library for complex text layout
+URL: https://github.com/HOST-Oman/libraqm
+Version: 0.10.5
+Requires.private: freetype2 >=  24.0.18, harfbuzz >=  3.0.0, fribidi >=  1.0.6
+Libs: -L${libdir} -lraqm
+Cflags: -I${includedir}

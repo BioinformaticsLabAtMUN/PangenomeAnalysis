@@ -1484,10 +1484,12 @@ def save_revigo_results(core_analysis, missing_analysis, absent_analysis, revigo
             'incomplete_mf_clusters': '; '.join(data['missing_mf_clusters'])
         })
     
-    strain_df = pd.DataFrame(strain_data)
+    strain_columns = ['strain_id', 'organism', 'missing_gene_count', 'incomplete_bp_clusters_count',
+                      'incomplete_mf_clusters_count', 'incomplete_bp_clusters', 'incomplete_mf_clusters']
+    strain_df = pd.DataFrame(strain_data, columns=strain_columns)
     strain_df = strain_df.sort_values('missing_gene_count', ascending=False)
     strain_df.to_csv(output_dir / 'strain_incomplete_revigo_clusters.tsv', sep='\t', index=False)
-    
+
     # 8. Strain-wise completely absent clusters
     strain_absent_data = []
     for strain_id, data in absent_analysis['strain_analysis'].items():
@@ -1499,8 +1501,11 @@ def save_revigo_results(core_analysis, missing_analysis, absent_analysis, revigo
             'completely_absent_bp_clusters': '; '.join(data['absent_bp_clusters']),
             'completely_absent_mf_clusters': '; '.join(data['absent_mf_clusters'])
         })
-    
-    strain_absent_df = pd.DataFrame(strain_absent_data)
+
+    strain_absent_columns = ['strain_id', 'organism', 'completely_absent_bp_clusters_count',
+                            'completely_absent_mf_clusters_count', 'completely_absent_bp_clusters',
+                            'completely_absent_mf_clusters']
+    strain_absent_df = pd.DataFrame(strain_absent_data, columns=strain_absent_columns)
     strain_absent_df = strain_absent_df.sort_values('completely_absent_bp_clusters_count', ascending=False)
     strain_absent_df.to_csv(output_dir / 'strain_completely_absent_revigo_clusters.tsv', sep='\t', index=False)
     

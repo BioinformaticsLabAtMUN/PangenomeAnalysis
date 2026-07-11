@@ -1,0 +1,18 @@
+Loading LSDF ...
+  LSDF shape: 69968 x 9
+  Orientation: rows_are_alleles
+  Total strains: 9
+  Alleles seen on matrix axis: 69968
+Reading allele-names TSV (chunked) ...
+  Mapped alleles -> genes: 69968
+  Clusters with explicit representative: 30406
+Grouping alleles by gene ...
+  Alleles matched to genes: 69968
+  Total genes with ≥1 allele on matrix: 30406
+Selecting dominant allele per gene ...
+Wrote ALL summary: Strep_cdhit_all_dominant_summary.tsv (30406 rows)
+  FASTA: wrote 30406 sequences to Strep_cdhit_all_dominant_alleles.faa
+Core gene list: 2156 IDs
+Wrote CORE summary: Strep_cdhit_core_dominant_summary.tsv (2156 rows)
+  FASTA: wrote 2156 sequences to Strep_cdhit_core_dominant_alleles.faa
+Done.

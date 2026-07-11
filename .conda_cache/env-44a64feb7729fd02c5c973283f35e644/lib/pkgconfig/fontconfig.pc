@@ -1,0 +1,16 @@
+prefix=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+sysconfdir=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644/etc
+localstatedir=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644/var
+confdir=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644/etc/fonts
+cachedir=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644/var/cache/fontconfig
+
+Name: Fontconfig
+Description: Font configuration and customization library
+Version: 2.18.1
+Requires.private: freetype2 >=  21.0.15, expat
+Libs: -L${libdir} -lfontconfig
+Libs.private: -lintl -lm
+Cflags: -I${includedir}

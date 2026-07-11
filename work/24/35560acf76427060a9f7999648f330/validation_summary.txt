@@ -1,0 +1,51 @@
+[2026-07-11 00:42:35] Starting pan-genome validation
+[2026-07-11 00:42:35] Gene matrix: Strep_cdhit_strain_by_gene.npz
+[2026-07-11 00:42:35] Allele matrix: Strep_cdhit_strain_by_allele.npz
+[2026-07-11 00:42:35] Allele names: Strep_cdhit_allele_names.tsv
+[2026-07-11 00:42:35] Workers: 1
+[2026-07-11 00:42:35] Batch size: 50
+[2026-07-11 00:42:35] Loading sparse matrices and allele mapping...
+[2026-07-11 00:42:35] Data loaded in 0.03s
+[2026-07-11 00:42:35] Gene matrix shape: (30406, 9)
+[2026-07-11 00:42:35] Allele matrix shape: (69968, 9)
+[2026-07-11 00:42:35] Allele mapping entries: 69968
+[2026-07-11 00:42:35] 
+--- Combined Gene and Allele Table Validation ---
+[2026-07-11 00:42:35] Validating gene and allele tables from raw FASTA files (combined pass)...
+[2026-07-11 00:42:35] Found 9 genome FASTA files to process
+[2026-07-11 00:42:35] Testing single genome processing before launching parallel jobs...
+[2026-07-11 00:42:35] Testing with genome: AMCC400023 from FASTA_inputs/AMCC400023.faa
+[2026-07-11 00:42:35] Test genome has 9046 raw headers
+[2026-07-11 00:42:35] Sample raw headers: ['WP_093792074.1', 'WP_045557960.1', 'WP_045561363.1']
+[2026-07-11 00:42:35] Test genome has 9046 renamed headers
+[2026-07-11 00:42:35] Test genome has 8844 gene headers
+[2026-07-11 00:42:35] Test genome has 8844 genes in LSDF
+[2026-07-11 00:42:35] Test genome has 9046 alleles in LSDF
+[2026-07-11 00:42:35] Test processing successful, proceeding with parallel processing
+[2026-07-11 00:42:35] Using 1 worker processes
+[2026-07-11 00:42:35] Processing batch 1/1: genomes 1-9
+[2026-07-11 00:42:35] AMCC400023 gene table: 0 inconsistencies
+[2026-07-11 00:42:35] AMCC400023 allele table: 0 inconsistencies
+[2026-07-11 00:42:35] acidiscabies gene table: 0 inconsistencies
+[2026-07-11 00:42:35] acidiscabies allele table: 0 inconsistencies
+[2026-07-11 00:42:35] albidoflavus gene table: 0 inconsistencies
+[2026-07-11 00:42:35] albidoflavus allele table: 0 inconsistencies
+[2026-07-11 00:42:35] bobili gene table: 0 inconsistencies
+[2026-07-11 00:42:35] bobili allele table: 0 inconsistencies
+[2026-07-11 00:42:36] caniscabiei gene table: 0 inconsistencies
+[2026-07-11 00:42:36] caniscabiei allele table: 0 inconsistencies
+[2026-07-11 00:42:36] coelicolor gene table: 0 inconsistencies
+[2026-07-11 00:42:36] coelicolor allele table: 0 inconsistencies
+[2026-07-11 00:42:36] europaescabiei gene table: 0 inconsistencies
+[2026-07-11 00:42:36] europaescabiei allele table: 0 inconsistencies
+[2026-07-11 00:42:36] lividans gene table: 0 inconsistencies
+[2026-07-11 00:42:36] lividans allele table: 0 inconsistencies
+[2026-07-11 00:42:36] scabiei gene table: 0 inconsistencies
+[2026-07-11 00:42:36] scabiei allele table: 0 inconsistencies
+[2026-07-11 00:42:36] Combined validation complete. Gene inconsistencies: 0, Allele inconsistencies: 0
+[2026-07-11 00:42:36] Total time: 0.2s, Average: 0.02s per genome
+[2026-07-11 00:42:36] 
+Validation complete in 0.22s
+[2026-07-11 00:42:36] Total gene table inconsistencies: 0
+[2026-07-11 00:42:36] Total allele table inconsistencies: 0
+[2026-07-11 00:42:36] Results written to ./validation_summary.txt

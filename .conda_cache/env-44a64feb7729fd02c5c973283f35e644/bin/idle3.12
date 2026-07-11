@@ -1,0 +1,5 @@
+#!/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644/bin/python3.12
+
+from idlelib.pyshell import main
+if __name__ == '__main__':
+    main()

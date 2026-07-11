@@ -1,0 +1,146 @@
+Jul-11 00:42:25.207 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Jul-11 00:42:25.242 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.10.4
+Jul-11 00:42:25.254 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/saba/.nextflow/plugins; core-plugins: nf-amazon@3.4.4,nf-azure@1.20.2,nf-cloudcache@0.5.0,nf-codecommit@0.5.0,nf-console@1.3.0,nf-google@1.23.5,nf-k8s@1.2.2,nf-tower@1.17.5,nf-wave@1.16.1
+Jul-11 00:42:25.264 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-11 00:42:25.264 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-11 00:42:25.265 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Jul-11 00:42:25.273 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Jul-11 00:42:25.328 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-11 00:42:25.340 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/saba/Documents/GitHub/PangenomeAnalysis/nextflow.config
+Jul-11 00:42:25.341 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/saba/Documents/GitHub/PangenomeAnalysis/nextflow.config
+Jul-11 00:42:25.351 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jul-11 00:42:25.593 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-11 00:42:25.594 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul-11 00:42:25.600 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/saba/.nextflow/secrets/store.json
+Jul-11 00:42:25.601 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1d247525] - activable => nextflow.secret.LocalSecretsProvider@1d247525
+Jul-11 00:42:25.605 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jul-11 00:42:25.613 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [boring_roentgen] DSL2 - revision: 9a32d9141f
+Jul-11 00:42:25.633 [main] DEBUG nextflow.Session - Session UUID: 4fe586f0-3bab-4d81-89fb-8c1ab4b6637a
+Jul-11 00:42:25.633 [main] DEBUG nextflow.Session - Run name: boring_roentgen
+Jul-11 00:42:25.634 [main] DEBUG nextflow.Session - Executor pool size: 10
+Jul-11 00:42:25.636 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul-11 00:42:25.638 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-11 00:42:25.649 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.10.4 build 0
+  Created: 10-02-2026 14:37 UTC (11:07 NDT)
+  System: Mac OS X 26.2
+  Runtime: Groovy 4.0.28 on OpenJDK 64-Bit Server VM 25.0.2
+  Encoding: UTF-8 (UTF-8)
+  Process: 10548@Mac [192.168.2.54]
+  CPUs: 10 - Mem: 16 GB (318.6 MB) - Swap: 0 (0)
+Jul-11 00:42:25.655 [main] DEBUG nextflow.Session - Work-dir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work [Mac OS X]
+Jul-11 00:42:25.655 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/saba/Documents/GitHub/PangenomeAnalysis/bin
+Jul-11 00:42:25.659 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-11 00:42:25.662 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Jul-11 00:42:25.663 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Jul-11 00:42:25.677 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-11 00:42:25.681 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 11; maxThreads: 1000
+Jul-11 00:42:25.705 [main] DEBUG nextflow.Session - Session start
+Jul-11 00:42:25.708 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/saba/Documents/GitHub/PangenomeAnalysis/output/execution_trace.txt
+Jul-11 00:42:26.284 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-11 00:42:26.622 [main] INFO  nextflow.Nextflow - Starting pangenome pipeline
+Jul-11 00:42:26.623 [main] INFO  nextflow.Nextflow - Base directory: /Users/saba/Documents/GitHub/PangenomeAnalysis
+Jul-11 00:42:26.623 [main] INFO  nextflow.Nextflow - Input directory: /Users/saba/Documents/GitHub/PangenomeAnalysis/FASTA_inputs
+Jul-11 00:42:26.637 [main] INFO  nextflow.Nextflow - Consolidated files not found. Running consolidation...
+Jul-11 00:42:26.650 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.650 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.654 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-11 00:42:26.658 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=12; memory=32 GB; capacity=10; pollInterval=100ms; dumpInterval=5m
+Jul-11 00:42:26.659 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-11 00:42:26.676 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'consolidateSequences': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.694 [main] WARN  nextflow.Nextflow - CD-HIT Revigo files not found - skipping Revigo-based functional analysis
+Jul-11 00:42:26.695 [main] INFO  nextflow.Nextflow - Running CD-HIT clustering method
+Jul-11 00:42:26.696 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:runCDHIT` matches process runCDHIT
+Jul-11 00:42:26.696 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.696 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.696 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'runCDHIT': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.707 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.707 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.707 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'renameCDHITSequences': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.710 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:generatePangenomeTables` matches process generateCDHITPangenomeTables
+Jul-11 00:42:26.710 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.710 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.710 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'generateCDHITPangenomeTables': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.712 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.712 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.712 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'validateCDHITPangenome': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.714 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.714 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.714 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'analyzeAndValidateCoreGenomeCDHIT': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.717 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.717 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.718 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'extractDominantAllelesWithCoreCDHIT': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.719 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:annotateSmartDominantAlleles` matches process annotateSmartDominantAllelesCDHIT
+Jul-11 00:42:26.719 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.719 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.719 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'annotateSmartDominantAllelesCDHIT': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.722 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.722 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.723 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'analyzeHeapsLawCDHIT': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.728 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-11 00:42:26.729 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-11 00:42:26.729 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'analyzeGeneStructureCDHIT': maxForks=0; fair=false; array=0
+Jul-11 00:42:26.730 [main] INFO  nextflow.Nextflow - Skipping Revigo functional analysis for CD-HIT - Revigo files not found
+Jul-11 00:42:26.743 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: annotateSmartDominantAlleles, annotateSmartDominantAllelesFoldseek, validatePangenome, validateFoldseekPangenome, foldseekCluster, renameSequences, renameCDHITSequences, validateCDHITPangenome, analyzeClusteredFunctionalCoreCDHIT, validateSwiftOrthoPangenome, generateSwiftOrthoPangenomeTables, analyzeAndValidateCoreGenomeFoldseek, clusterGOTermsWithGOAToolsCDHIT, analyzeHeapsLawCDHIT, generateFoldseekPangenomeTables, analyzeHeapsLaw, extractDominantAllelesWithCore, consolidateSequences, generateCDHITPangenomeTables, analyzeGeneStructureSwift, analyzeClusteredFunctionalCore, extractDominantAllelesWithCoreCDHIT, analyzeGeneStructureCDHIT, analyzeRevigoFunctionalCoreCDHIT, renameSwiftOrthoSequences, extractDominantAllelesWithCoreSwift, analyzeRevigoFunctionalCoreSwift, categorizeGOTerms, runCDHIT, analyzeGeneStructure, viewSwiftOrthoPangenome, analyzeHeapsLawSwiftOrtho, categorizeGOTermsFoldseek, analyzeAndValidateCoreGenome, runSwiftOrtho, clusterGOTermsWithGOATools, categorizeGOTermsCDHIT, viewCDHITPangenome, analyzeHeapsLawFoldseek, viewFoldseekPangenome, viewPangenome, renameFoldseekSequences, analyzeFunctionalCore, foldseekCreateDB, annotateSmartDominantAllelesSwift, analyzeRevigoFunctionalCore, analyzeGeneStructureFoldseek, analyzeAndValidateCoreGenomeCDHIT, annotateSmartDominantAllelesCDHIT, extractDominantAllelesWithCoreFoldseek, analyzeRevigoFunctionalCoreFoldseek, generatePangenomeTables, analyzeAndValidateCoreGenomeSwift
+Jul-11 00:42:26.745 [main] DEBUG nextflow.Session - Igniting dataflow network (13)
+Jul-11 00:42:26.747 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > consolidateSequences
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > runCDHIT
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > renameCDHITSequences
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > generateCDHITPangenomeTables
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > validateCDHITPangenome
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > analyzeAndValidateCoreGenomeCDHIT
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > extractDominantAllelesWithCoreCDHIT
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > annotateSmartDominantAllelesCDHIT
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > analyzeHeapsLawCDHIT
+Jul-11 00:42:26.748 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > analyzeGeneStructureCDHIT
+Jul-11 00:42:26.748 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_51a45f143450fa80: /Users/saba/Documents/GitHub/PangenomeAnalysis/main.nf
+  Script_0fe2235286a6da65: /Users/saba/Documents/GitHub/PangenomeAnalysis/modules.nf
+Jul-11 00:42:26.748 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul-11 00:42:26.748 [main] DEBUG nextflow.Session - Session await
+Jul-11 00:42:26.774 [Actor Thread 1] DEBUG nextflow.conda.CondaCache - conda found local env for environment=/Users/saba/Documents/GitHub/PangenomeAnalysis/envs/pangenome_env.yml; path=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644
+Jul-11 00:42:26.790 [Task submitter] WARN  n.executor.BashWrapperBuilder - Task runtime metrics are not reported when using macOS without a container engine
+Jul-11 00:42:26.795 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:42:26.796 [Task submitter] INFO  nextflow.Session - [28/2858fd] Submitted process > consolidateSequences (1)
+Jul-11 00:42:28.070 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: consolidateSequences (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/28/2858fd3d96622f79b169816451e8c2]
+Jul-11 00:42:28.071 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-11 00:42:28.081 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=30; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jul-11 00:42:28.104 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:42:28.104 [Task submitter] INFO  nextflow.Session - [7a/cc24ca] Submitted process > runCDHIT (1)
+Jul-11 00:42:31.941 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: runCDHIT (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/7a/cc24cae0ab12c48826af2fee97de8d]
+Jul-11 00:42:31.957 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:42:31.957 [Task submitter] INFO  nextflow.Session - [77/b38b8f] Submitted process > renameCDHITSequences (1)
+Jul-11 00:42:32.828 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: renameCDHITSequences (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/77/b38b8f6a575ae5615c07743bcea689]
+Jul-11 00:42:32.844 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:42:32.845 [Task submitter] INFO  nextflow.Session - [7f/72578c] Submitted process > generateCDHITPangenomeTables (1)
+Jul-11 00:42:34.750 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: generateCDHITPangenomeTables (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/7f/72578c5a7a1ef3e1617b8f3c2aba3b]
+Jul-11 00:42:34.761 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:42:34.761 [Task submitter] INFO  nextflow.Session - [51/e1d50c] Submitted process > analyzeHeapsLawCDHIT (1)
+Jul-11 00:42:34.763 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:42:34.763 [Task submitter] INFO  nextflow.Session - [24/35560a] Submitted process > validateCDHITPangenome (1)
+Jul-11 00:42:34.765 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:42:34.766 [Task submitter] INFO  nextflow.Session - [ec/701435] Submitted process > analyzeAndValidateCoreGenomeCDHIT (1)
+Jul-11 00:42:36.121 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: validateCDHITPangenome (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/24/35560acf76427060a9f7999648f330]
+Jul-11 00:42:57.635 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: analyzeHeapsLawCDHIT (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/51/e1d50c657e6a71114bbfea49ef031b]
+Jul-11 00:43:08.020 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: analyzeAndValidateCoreGenomeCDHIT (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/ec/701435f93b9160c10799b72af7e516]
+Jul-11 00:43:08.032 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:43:08.032 [Task submitter] INFO  nextflow.Session - [74/723247] Submitted process > extractDominantAllelesWithCoreCDHIT (1)
+Jul-11 00:43:10.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: extractDominantAllelesWithCoreCDHIT (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/74/7232475d1285bdb04f1294044d360b]
+Jul-11 00:43:10.800 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:43:10.800 [Task submitter] INFO  nextflow.Session - [9d/33ce26] Submitted process > annotateSmartDominantAllelesCDHIT (1)
+Jul-11 00:43:12.359 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: annotateSmartDominantAllelesCDHIT (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/9d/33ce261302fc3579a1b7e672132ced]
+Jul-11 00:43:12.372 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-11 00:43:12.372 [Task submitter] INFO  nextflow.Session - [0d/8224db] Submitted process > analyzeGeneStructureCDHIT (1)
+Jul-11 00:43:16.458 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: analyzeGeneStructureCDHIT (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/saba/Documents/GitHub/PangenomeAnalysis/work/0d/8224db8819be24d38fd0b4ef3633a4]
+Jul-11 00:43:16.462 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul-11 00:43:16.564 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul-11 00:43:16.564 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-11 00:43:16.566 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Jul-11 00:43:16.566 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Jul-11 00:43:16.571 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=10; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1m 43s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=3; peakCpus=12; peakMemory=16 GB; ]
+Jul-11 00:43:16.611 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jul-11 00:43:17.113 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jul-11 00:43:17.160 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jul-11 00:43:17.163 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul-11 00:43:17.177 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jul-11 00:43:17.177 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

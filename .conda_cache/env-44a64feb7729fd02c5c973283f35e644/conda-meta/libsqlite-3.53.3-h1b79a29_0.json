@@ -1,0 +1,82 @@
+{
+  "name": "libsqlite",
+  "version": "3.53.3",
+  "build": "h1b79a29_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "subdir": "osx-arm64",
+  "fn": "libsqlite-3.53.3-h1b79a29_0.conda",
+  "md5": "7184d95871a58b8258a8ea124ed5aabc",
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libsqlite-3.53.3-h1b79a29_0.conda",
+  "sha256": "a73a8acd97a6599fd6e561514db9f101ca7fd984cdc0cfd91ba74c8aa9dbe067",
+  "depends": [
+    "__osx >=11.0",
+    "libzlib >=1.3.2,<2.0a0"
+  ],
+  "constrains": [],
+  "license": "blessing",
+  "timestamp": 1782519136000,
+  "size": 924912,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libsqlite-3.53.3-h1b79a29_0.conda",
+  "extracted_package_dir": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libsqlite-3.53.3-h1b79a29_0",
+  "files": [
+    "include/sqlite3.h",
+    "include/sqlite3ext.h",
+    "lib/libsqlite3.0.dylib",
+    "lib/libsqlite3.3.53.3.dylib",
+    "lib/libsqlite3.dylib",
+    "lib/pkgconfig/sqlite3.pc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "include/sqlite3.h",
+        "path_type": "hardlink",
+        "sha256": "4ff81af4849acabc76fc8349abb926814395072617ca18e08800abf734ab7612",
+        "size_in_bytes": 690838,
+        "sha256_in_prefix": "4ff81af4849acabc76fc8349abb926814395072617ca18e08800abf734ab7612"
+      },
+      {
+        "_path": "include/sqlite3ext.h",
+        "path_type": "hardlink",
+        "sha256": "ac9645e5c9ff0cf176efdd6e75cb5e98f46295d38e02db5c4d208826a39ab4be",
+        "size_in_bytes": 39175,
+        "sha256_in_prefix": "ac9645e5c9ff0cf176efdd6e75cb5e98f46295d38e02db5c4d208826a39ab4be"
+      },
+      {
+        "_path": "lib/libsqlite3.0.dylib",
+        "path_type": "softlink",
+        "sha256": "5091d48735ef09a0c3fa2c55c72e1e2c83b41386e73ef7e32470616870e74d6c",
+        "size_in_bytes": 1764544
+      },
+      {
+        "_path": "lib/libsqlite3.3.53.3.dylib",
+        "path_type": "hardlink",
+        "sha256": "5091d48735ef09a0c3fa2c55c72e1e2c83b41386e73ef7e32470616870e74d6c",
+        "size_in_bytes": 1764544,
+        "sha256_in_prefix": "5091d48735ef09a0c3fa2c55c72e1e2c83b41386e73ef7e32470616870e74d6c"
+      },
+      {
+        "_path": "lib/libsqlite3.dylib",
+        "path_type": "softlink",
+        "sha256": "5091d48735ef09a0c3fa2c55c72e1e2c83b41386e73ef7e32470616870e74d6c",
+        "size_in_bytes": 1764544
+      },
+      {
+        "_path": "lib/pkgconfig/sqlite3.pc",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/sqlite-split_1782519010977/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "sha256": "2b2fecebb23d632fb78a257360a54837dae9ccdb6c09b13f191e6f9d24599248",
+        "size_in_bytes": 515,
+        "sha256_in_prefix": "a51f598095823fe10b5df2d9567574d82c5bdfa5a00ff28e21b74a57a5d54de8"
+      }
+    ]
+  },
+  "link": {
+    "source": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libsqlite-3.53.3-h1b79a29_0",
+    "type": 1
+  }
+}

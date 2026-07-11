@@ -1,0 +1,9 @@
+prefix=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: GNU FriBidi
+Description: Unicode Bidirectional Algorithm Library
+Version: 1.0.16
+Libs: -L${libdir} -lfribidi
+Cflags: -I${includedir}/fribidi

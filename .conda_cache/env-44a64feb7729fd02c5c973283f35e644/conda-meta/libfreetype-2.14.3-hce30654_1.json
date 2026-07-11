@@ -1,0 +1,31 @@
+{
+  "name": "libfreetype",
+  "version": "2.14.3",
+  "build": "hce30654_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "subdir": "osx-arm64",
+  "fn": "libfreetype-2.14.3-hce30654_1.conda",
+  "md5": "0582e67cd14cfed773be2f3b1aba08e0",
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libfreetype-2.14.3-hce30654_1.conda",
+  "sha256": "d5637b01941c0fc8f5cbb1f170c238f4ee153b3c1708b9d50f4f1305438ff051",
+  "depends": [
+    "libfreetype6 >=2.14.3"
+  ],
+  "constrains": [],
+  "license": "GPL-2.0-only OR FTL",
+  "timestamp": 1780933612000,
+  "size": 8365,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libfreetype-2.14.3-hce30654_1.conda",
+  "extracted_package_dir": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libfreetype-2.14.3-hce30654_1",
+  "files": [],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": []
+  },
+  "link": {
+    "source": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libfreetype-2.14.3-hce30654_1",
+    "type": 1
+  }
+}

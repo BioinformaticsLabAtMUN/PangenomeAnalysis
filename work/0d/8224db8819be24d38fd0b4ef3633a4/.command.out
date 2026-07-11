@@ -1,0 +1,72 @@
+=== Gene-Level Structural Analysis for cdhit ===
+🧬 GENE-LEVEL STRUCTURAL ANALYSIS
+========================================
+Loading data files for structural analysis...
+Loaded gene matrix: (30406, 9)
+Loaded 2156 core genes
+Loaded metadata for 153 proteomes
+Loaded gene annotations for 2156 genes
+Analyzing 30406 genes across 9 strains
+
+=== Core Genome Structural Analysis ===
+Analyzing 2156 core genes across 9 strains
+Core Coverage Statistics:
+  Mean coverage: 96.87%
+  Median coverage: 100.00%
+  Range: 71.8% - 100.0%
+  Standard deviation: 8.86%
+Structural outliers identified: 1 strains
+
+=== Gene Frequency Distribution Analysis ===
+Gene frequency categories:
+  Total genes: 30,406
+  Unique genes (1 strain): 17,348 (57.1%)
+  Rare genes (2-0 strains): 0 (0.0%)
+  Accessory genes: 28,250 (92.9%)
+  Core genes (≥95% strains): 1,548
+  ML-defined core genes: 2,156
+
+=== Unique Genes Per Strain Analysis ===
+Unique genes per strain statistics:
+  Mean: 1928 genes
+  Range: 552-4203 genes
+  Mean percentage: 24.0%
+
+=== Missing Core Genes Structural Analysis ===
+Missing core genes analysis:
+  Strains with missing core genes: 1
+  Mean missing genes: 67.6
+  Max missing genes: 608
+
+=== Creating Essential Structural Visualizations ===
+Saving complete missing genes data for 1 strains to TSV...
+Complete data saved: 1 strains in TSV
+Missing core genes plot saved:
+   - Plot shows: 1 strains
+   - Full data: 1 strains in TSV file
+✅ Enhanced detailed missing genes plot saved with gene names and protein functions
+✅ Missing genes summary table created (TSV + HTML format)
+✅ Unique genes distribution plot saved
+
+=== Saving Structural Analysis Results ===
+Structural analysis results saved to: .
+
+Structural analysis completed!
+Results saved to .
+
+Key structural findings:
+  • Mean core coverage: 96.9%
+  • 17,348 unique genes (57.1% of pangenome)
+  • 2,156 core genes (7.1% of pangenome)
+  • 28,250 other shared genes (92.9% of pangenome)
+  • 1 strains have missing core genes
+  • 1 structural outliers identified
+
+📊 Generated Files:
+  • Core coverage plots (interactive HTML + static PNG + color-coded)
+  • Pangenome composition pie chart (improved colors)
+  • All strains missing genes (vertical bars)
+  • Missing genes detailed plot (with gene names + protein functions)
+  • Missing genes summary table (TSV + HTML)
+  • Comprehensive TSV data files for further analysis
+=== Gene Structural Analysis Complete ===

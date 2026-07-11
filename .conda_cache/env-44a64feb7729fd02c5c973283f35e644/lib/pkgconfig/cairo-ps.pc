@@ -1,0 +1,8 @@
+prefix=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644
+includedir=${prefix}/include
+
+Name: cairo-ps
+Description: PostScript surface backend for cairo graphics library
+Version: 1.18.4
+Requires: cairo, zlib
+Cflags: -I${includedir}

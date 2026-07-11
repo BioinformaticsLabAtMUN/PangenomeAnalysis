@@ -1,0 +1,16 @@
+Found 9 FASTAs → building tables
+Loaded 69968 header→allele mappings (with 0 shared synonyms)
+→ processing AMCC400023 (1/9)
+→ processing acidiscabies (2/9)
+→ processing albidoflavus (3/9)
+→ processing bobili (4/9)
+→ processing caniscabiei (5/9)
+→ processing coelicolor (6/9)
+→ processing europaescabiei (7/9)
+→ processing lividans (8/9)
+→ processing scabiei (9/9)
+Allele nonzeros: 74939
+Gene   nonzeros: 73258
+Saving allele matrix…
+Saving gene   matrix…
+Done.

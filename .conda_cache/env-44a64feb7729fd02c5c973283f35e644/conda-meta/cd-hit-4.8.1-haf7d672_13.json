@@ -1,0 +1,331 @@
+{
+  "name": "cd-hit",
+  "version": "4.8.1",
+  "build": "haf7d672_13",
+  "build_number": 13,
+  "channel": "https://conda.anaconda.org/bioconda/osx-arm64",
+  "subdir": "osx-arm64",
+  "fn": "cd-hit-4.8.1-haf7d672_13.tar.bz2",
+  "md5": "3dba63c43b3ebefb6c4c8f9bbe7dcdb7",
+  "url": "https://conda.anaconda.org/bioconda/osx-arm64/cd-hit-4.8.1-haf7d672_13.tar.bz2",
+  "sha256": "f70d194cf4222b5c3de8cd04e846bc1b231e7f516cfb2ba4f87d6a7f2e4b590d",
+  "depends": [
+    "libcxx >=18",
+    "libzlib >=1.3.1,<2.0a0",
+    "llvm-openmp >=18.1.8"
+  ],
+  "constrains": [],
+  "license": "GPL-2.0-or-later",
+  "timestamp": 1745531926000,
+  "size": 213740,
+  "requested_spec": "cd-hit[version='>=4.8.1']",
+  "package_tarball_full_path": "/opt/homebrew/Caskroom/miniconda/base/pkgs/cd-hit-4.8.1-haf7d672_13.tar.bz2",
+  "extracted_package_dir": "/opt/homebrew/Caskroom/miniconda/base/pkgs/cd-hit-4.8.1-haf7d672_13",
+  "files": [
+    "bin/FET.pl",
+    "bin/cd-hit",
+    "bin/cd-hit-2d",
+    "bin/cd-hit-2d-para.pl",
+    "bin/cd-hit-454",
+    "bin/cd-hit-clstr_2_blm8.pl",
+    "bin/cd-hit-div",
+    "bin/cd-hit-div.pl",
+    "bin/cd-hit-est",
+    "bin/cd-hit-est-2d",
+    "bin/cd-hit-para.pl",
+    "bin/clstr2tree.pl",
+    "bin/clstr2txt.pl",
+    "bin/clstr2xml.pl",
+    "bin/clstr_cut.pl",
+    "bin/clstr_list.pl",
+    "bin/clstr_list_sort.pl",
+    "bin/clstr_merge.pl",
+    "bin/clstr_merge_noorder.pl",
+    "bin/clstr_quality_eval.pl",
+    "bin/clstr_quality_eval_by_link.pl",
+    "bin/clstr_reduce.pl",
+    "bin/clstr_renumber.pl",
+    "bin/clstr_rep.pl",
+    "bin/clstr_reps_faa_rev.pl",
+    "bin/clstr_rev.pl",
+    "bin/clstr_select.pl",
+    "bin/clstr_select_rep.pl",
+    "bin/clstr_size_histogram.pl",
+    "bin/clstr_size_stat.pl",
+    "bin/clstr_sort_by.pl",
+    "bin/clstr_sort_prot_by.pl",
+    "bin/clstr_sql_tbl.pl",
+    "bin/clstr_sql_tbl_sort.pl",
+    "bin/make_multi_seq.pl",
+    "bin/plot_2d.pl",
+    "bin/plot_len1.pl"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "bin/FET.pl",
+        "path_type": "hardlink",
+        "sha256": "e6afe1a1e2d4fa0a07739dd19010c8c1879884aefcf18a835feaad941e2a6e77",
+        "size_in_bytes": 3156,
+        "sha256_in_prefix": "e6afe1a1e2d4fa0a07739dd19010c8c1879884aefcf18a835feaad941e2a6e77"
+      },
+      {
+        "_path": "bin/cd-hit",
+        "path_type": "hardlink",
+        "sha256": "80ab988491db68d9443dfc91bf7aaa3745fb5f2569d27a317af00abc62b6eda8",
+        "size_in_bytes": 175696,
+        "sha256_in_prefix": "80ab988491db68d9443dfc91bf7aaa3745fb5f2569d27a317af00abc62b6eda8"
+      },
+      {
+        "_path": "bin/cd-hit-2d",
+        "path_type": "hardlink",
+        "sha256": "a8159c4198480b418aa8335e6f8c18cc9d383234c0d20f2b16815a9d564ba589",
+        "size_in_bytes": 175744,
+        "sha256_in_prefix": "a8159c4198480b418aa8335e6f8c18cc9d383234c0d20f2b16815a9d564ba589"
+      },
+      {
+        "_path": "bin/cd-hit-2d-para.pl",
+        "path_type": "hardlink",
+        "sha256": "c76a78ac417e58daaa18ff8493a73bfc2046042e496380b178c49e5280af6b31",
+        "size_in_bytes": 12566,
+        "sha256_in_prefix": "c76a78ac417e58daaa18ff8493a73bfc2046042e496380b178c49e5280af6b31"
+      },
+      {
+        "_path": "bin/cd-hit-454",
+        "path_type": "hardlink",
+        "sha256": "49eaf3e7b4feb7c6d578978818b29c50284d16f5ec5ca889de45d3fd9d8f3896",
+        "size_in_bytes": 175760,
+        "sha256_in_prefix": "49eaf3e7b4feb7c6d578978818b29c50284d16f5ec5ca889de45d3fd9d8f3896"
+      },
+      {
+        "_path": "bin/cd-hit-clstr_2_blm8.pl",
+        "path_type": "hardlink",
+        "sha256": "690a88104cf1f167c611e0cecf198d58682b7d39ddfb9402094484190026f4a3",
+        "size_in_bytes": 2130,
+        "sha256_in_prefix": "690a88104cf1f167c611e0cecf198d58682b7d39ddfb9402094484190026f4a3"
+      },
+      {
+        "_path": "bin/cd-hit-div",
+        "path_type": "hardlink",
+        "sha256": "fbe5c5c1094f5bc9361b5a5e3a9afbcf99b29182a99f078c61a0d82dc7b8ed60",
+        "size_in_bytes": 175520,
+        "sha256_in_prefix": "fbe5c5c1094f5bc9361b5a5e3a9afbcf99b29182a99f078c61a0d82dc7b8ed60"
+      },
+      {
+        "_path": "bin/cd-hit-div.pl",
+        "path_type": "hardlink",
+        "sha256": "efda02af4ebae43a40be37c92cd37ae3006b05d05812547b1e7631fd604e1ba8",
+        "size_in_bytes": 881,
+        "sha256_in_prefix": "efda02af4ebae43a40be37c92cd37ae3006b05d05812547b1e7631fd604e1ba8"
+      },
+      {
+        "_path": "bin/cd-hit-est",
+        "path_type": "hardlink",
+        "sha256": "79ffc75759fb3140f75006b008d708a88d6a348c66232ff92485f13312cf0ae2",
+        "size_in_bytes": 175712,
+        "sha256_in_prefix": "79ffc75759fb3140f75006b008d708a88d6a348c66232ff92485f13312cf0ae2"
+      },
+      {
+        "_path": "bin/cd-hit-est-2d",
+        "path_type": "hardlink",
+        "sha256": "8a442397b73af7dab2d6049f8c667e185acdc9bad1dc1427a8d286f9e2e9ba34",
+        "size_in_bytes": 175744,
+        "sha256_in_prefix": "8a442397b73af7dab2d6049f8c667e185acdc9bad1dc1427a8d286f9e2e9ba34"
+      },
+      {
+        "_path": "bin/cd-hit-para.pl",
+        "path_type": "hardlink",
+        "sha256": "4d7592cf16dfe427427f786aa3ca82185c624a4a6cbed7bd8d11147eacc553a2",
+        "size_in_bytes": 11827,
+        "sha256_in_prefix": "4d7592cf16dfe427427f786aa3ca82185c624a4a6cbed7bd8d11147eacc553a2"
+      },
+      {
+        "_path": "bin/clstr2tree.pl",
+        "path_type": "hardlink",
+        "sha256": "b9318fa25ddea4aa033e25e8f22d7df36de751957f25b56903c26e7086546f85",
+        "size_in_bytes": 956,
+        "sha256_in_prefix": "b9318fa25ddea4aa033e25e8f22d7df36de751957f25b56903c26e7086546f85"
+      },
+      {
+        "_path": "bin/clstr2txt.pl",
+        "path_type": "hardlink",
+        "sha256": "477d957f529d67175bc3f46048a9b5279c94d2615ee7913e4c7c896c06914bf2",
+        "size_in_bytes": 1213,
+        "sha256_in_prefix": "477d957f529d67175bc3f46048a9b5279c94d2615ee7913e4c7c896c06914bf2"
+      },
+      {
+        "_path": "bin/clstr2xml.pl",
+        "path_type": "hardlink",
+        "sha256": "68b7e81ce0d1d4a11660b92d7ff8d54368af08fe175fdaf670d92034c9d98b13",
+        "size_in_bytes": 4507,
+        "sha256_in_prefix": "68b7e81ce0d1d4a11660b92d7ff8d54368af08fe175fdaf670d92034c9d98b13"
+      },
+      {
+        "_path": "bin/clstr_cut.pl",
+        "path_type": "hardlink",
+        "sha256": "9860ebcf67bbbb7545e33f307d495e5b33eb0754eefa1841bf90a296fcb1ee59",
+        "size_in_bytes": 468,
+        "sha256_in_prefix": "9860ebcf67bbbb7545e33f307d495e5b33eb0754eefa1841bf90a296fcb1ee59"
+      },
+      {
+        "_path": "bin/clstr_list.pl",
+        "path_type": "hardlink",
+        "sha256": "ff90267ff00190863abbd893f34d9419d0573b14ec81392791a8b35311dde153",
+        "size_in_bytes": 3262,
+        "sha256_in_prefix": "ff90267ff00190863abbd893f34d9419d0573b14ec81392791a8b35311dde153"
+      },
+      {
+        "_path": "bin/clstr_list_sort.pl",
+        "path_type": "hardlink",
+        "sha256": "4676a9e12be3b9b7f2713cdb0b57dc0256ae2eacf56c1867cc22a2998f1f9dd8",
+        "size_in_bytes": 1133,
+        "sha256_in_prefix": "4676a9e12be3b9b7f2713cdb0b57dc0256ae2eacf56c1867cc22a2998f1f9dd8"
+      },
+      {
+        "_path": "bin/clstr_merge.pl",
+        "path_type": "hardlink",
+        "sha256": "f3577832d7e4ff53a056d94786443a347f248c4aac7a530a999f0ff623385887",
+        "size_in_bytes": 3203,
+        "sha256_in_prefix": "f3577832d7e4ff53a056d94786443a347f248c4aac7a530a999f0ff623385887"
+      },
+      {
+        "_path": "bin/clstr_merge_noorder.pl",
+        "path_type": "hardlink",
+        "sha256": "e3f15185f7fb7b342e200fde82b2d56a800dd1539f7774deb96b2e3dd3649a1a",
+        "size_in_bytes": 2166,
+        "sha256_in_prefix": "e3f15185f7fb7b342e200fde82b2d56a800dd1539f7774deb96b2e3dd3649a1a"
+      },
+      {
+        "_path": "bin/clstr_quality_eval.pl",
+        "path_type": "hardlink",
+        "sha256": "bcd5be2422fe072716f29db817332afe12c47e67a978349781b58451c813a294",
+        "size_in_bytes": 3469,
+        "sha256_in_prefix": "bcd5be2422fe072716f29db817332afe12c47e67a978349781b58451c813a294"
+      },
+      {
+        "_path": "bin/clstr_quality_eval_by_link.pl",
+        "path_type": "hardlink",
+        "sha256": "5396e3fb7a5ebc4e1670370c1ef36b05a6a21e6184f3c0dbf1e2eee88157082d",
+        "size_in_bytes": 2339,
+        "sha256_in_prefix": "5396e3fb7a5ebc4e1670370c1ef36b05a6a21e6184f3c0dbf1e2eee88157082d"
+      },
+      {
+        "_path": "bin/clstr_reduce.pl",
+        "path_type": "hardlink",
+        "sha256": "c4ad61a6a71758ce2fbe38fc7c2146274dac9a6e0b41ad8cbef9f553934774e5",
+        "size_in_bytes": 1004,
+        "sha256_in_prefix": "c4ad61a6a71758ce2fbe38fc7c2146274dac9a6e0b41ad8cbef9f553934774e5"
+      },
+      {
+        "_path": "bin/clstr_renumber.pl",
+        "path_type": "hardlink",
+        "sha256": "8cc762dbd41159ce46ebf1d39bef8a3f10f401c7cca711fbe075b8901e132871",
+        "size_in_bytes": 200,
+        "sha256_in_prefix": "8cc762dbd41159ce46ebf1d39bef8a3f10f401c7cca711fbe075b8901e132871"
+      },
+      {
+        "_path": "bin/clstr_rep.pl",
+        "path_type": "hardlink",
+        "sha256": "a6d27831cdd106622a46290d8a34cdcf1eb17ed2b2b39e63683983e05ef140ee",
+        "size_in_bytes": 558,
+        "sha256_in_prefix": "a6d27831cdd106622a46290d8a34cdcf1eb17ed2b2b39e63683983e05ef140ee"
+      },
+      {
+        "_path": "bin/clstr_reps_faa_rev.pl",
+        "path_type": "hardlink",
+        "sha256": "c200dbe98a2227644d8d478ac35ac621061b55dd77715f91a1fc63037076536f",
+        "size_in_bytes": 1164,
+        "sha256_in_prefix": "c200dbe98a2227644d8d478ac35ac621061b55dd77715f91a1fc63037076536f"
+      },
+      {
+        "_path": "bin/clstr_rev.pl",
+        "path_type": "hardlink",
+        "sha256": "3f1af36fec593f7a18f438d1f04379dd04d7ec48af73dfff15013662815bdc07",
+        "size_in_bytes": 1624,
+        "sha256_in_prefix": "3f1af36fec593f7a18f438d1f04379dd04d7ec48af73dfff15013662815bdc07"
+      },
+      {
+        "_path": "bin/clstr_select.pl",
+        "path_type": "hardlink",
+        "sha256": "00dfb55e6462679db1b9024678723f71cbb613cbad6292ab61650d3dc52ef331",
+        "size_in_bytes": 391,
+        "sha256_in_prefix": "00dfb55e6462679db1b9024678723f71cbb613cbad6292ab61650d3dc52ef331"
+      },
+      {
+        "_path": "bin/clstr_select_rep.pl",
+        "path_type": "hardlink",
+        "sha256": "ee2eb86443635bce111a79ffbf4bcd3dfcda727390e95bcd2dd487ba88f1be5d",
+        "size_in_bytes": 559,
+        "sha256_in_prefix": "ee2eb86443635bce111a79ffbf4bcd3dfcda727390e95bcd2dd487ba88f1be5d"
+      },
+      {
+        "_path": "bin/clstr_size_histogram.pl",
+        "path_type": "hardlink",
+        "sha256": "bf80c560f5ded2f1a346226a155e503e98a8766bb4e9b83673f1e850a2f44e6e",
+        "size_in_bytes": 783,
+        "sha256_in_prefix": "bf80c560f5ded2f1a346226a155e503e98a8766bb4e9b83673f1e850a2f44e6e"
+      },
+      {
+        "_path": "bin/clstr_size_stat.pl",
+        "path_type": "hardlink",
+        "sha256": "32f98bb02897d03e104e06decf2622f3d029519871aa7e0563b7a8dae021c3ef",
+        "size_in_bytes": 729,
+        "sha256_in_prefix": "32f98bb02897d03e104e06decf2622f3d029519871aa7e0563b7a8dae021c3ef"
+      },
+      {
+        "_path": "bin/clstr_sort_by.pl",
+        "path_type": "hardlink",
+        "sha256": "e88f56edc36238812e4fff3308b50f9933cf76d632272389e4b951a04f82a016",
+        "size_in_bytes": 810,
+        "sha256_in_prefix": "e88f56edc36238812e4fff3308b50f9933cf76d632272389e4b951a04f82a016"
+      },
+      {
+        "_path": "bin/clstr_sort_prot_by.pl",
+        "path_type": "hardlink",
+        "sha256": "32dcff7ad9071d228e9553abca1d19582a686521963310891829c8117b561178",
+        "size_in_bytes": 1295,
+        "sha256_in_prefix": "32dcff7ad9071d228e9553abca1d19582a686521963310891829c8117b561178"
+      },
+      {
+        "_path": "bin/clstr_sql_tbl.pl",
+        "path_type": "hardlink",
+        "sha256": "af88f3b670228424d02853e4c0f69112c65f00c3eb59f6ebbe07b03928d2546f",
+        "size_in_bytes": 2932,
+        "sha256_in_prefix": "af88f3b670228424d02853e4c0f69112c65f00c3eb59f6ebbe07b03928d2546f"
+      },
+      {
+        "_path": "bin/clstr_sql_tbl_sort.pl",
+        "path_type": "hardlink",
+        "sha256": "f155a7c86caadb7f71535fc9bfe220595f51326f5d9f3f7a54e67045fec3d20e",
+        "size_in_bytes": 1107,
+        "sha256_in_prefix": "f155a7c86caadb7f71535fc9bfe220595f51326f5d9f3f7a54e67045fec3d20e"
+      },
+      {
+        "_path": "bin/make_multi_seq.pl",
+        "path_type": "hardlink",
+        "sha256": "55a808f57bca3ebde6ab21088c430ec356dcb6ef165b76c60c4f6f35a3bb8053",
+        "size_in_bytes": 1674,
+        "sha256_in_prefix": "55a808f57bca3ebde6ab21088c430ec356dcb6ef165b76c60c4f6f35a3bb8053"
+      },
+      {
+        "_path": "bin/plot_2d.pl",
+        "path_type": "hardlink",
+        "sha256": "5024d221b764a2b908d3e25f54b33f0c61c6d590cdda8274d17bc6d74fbe0885",
+        "size_in_bytes": 3672,
+        "sha256_in_prefix": "5024d221b764a2b908d3e25f54b33f0c61c6d590cdda8274d17bc6d74fbe0885"
+      },
+      {
+        "_path": "bin/plot_len1.pl",
+        "path_type": "hardlink",
+        "sha256": "e862f5c35ab95e7de29026160875cd058e094eebe8d2c4e3e714422712e20925",
+        "size_in_bytes": 2194,
+        "sha256_in_prefix": "e862f5c35ab95e7de29026160875cd058e094eebe8d2c4e3e714422712e20925"
+      }
+    ]
+  },
+  "link": {
+    "source": "/opt/homebrew/Caskroom/miniconda/base/pkgs/cd-hit-4.8.1-haf7d672_13",
+    "type": 1
+  }
+}

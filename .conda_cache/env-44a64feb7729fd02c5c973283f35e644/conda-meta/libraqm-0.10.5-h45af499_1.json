@@ -1,0 +1,78 @@
+{
+  "name": "libraqm",
+  "version": "0.10.5",
+  "build": "h45af499_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "subdir": "osx-arm64",
+  "fn": "libraqm-0.10.5-h45af499_1.conda",
+  "md5": "fa1a27aaaa10e92be48372fa01573f7c",
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libraqm-0.10.5-h45af499_1.conda",
+  "sha256": "7d88c506b9899d60e57f7456b02f54c7330029f2ad56c6df96357f981aa1bd96",
+  "depends": [
+    "__osx >=11.0",
+    "libharfbuzz >=14.2.1",
+    "libfreetype >=2.14.3",
+    "libfreetype6 >=2.14.3",
+    "fribidi >=1.0.16,<2.0a0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "timestamp": 1782807229000,
+  "size": 27026,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libraqm-0.10.5-h45af499_1.conda",
+  "extracted_package_dir": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libraqm-0.10.5-h45af499_1",
+  "files": [
+    "include/raqm-version.h",
+    "include/raqm.h",
+    "lib/libraqm.0.dylib",
+    "lib/libraqm.dylib",
+    "lib/pkgconfig/raqm.pc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "include/raqm-version.h",
+        "path_type": "hardlink",
+        "sha256": "907ea1fbfaf6cfe8cfda2a65c4c7c5b226b20f979d292f38ed96519c3aaf5e7f",
+        "size_in_bytes": 1542,
+        "sha256_in_prefix": "907ea1fbfaf6cfe8cfda2a65c4c7c5b226b20f979d292f38ed96519c3aaf5e7f"
+      },
+      {
+        "_path": "include/raqm.h",
+        "path_type": "hardlink",
+        "sha256": "eb1acbb11ae82ff93da2f8313ea78ef1611c83f18c9d2cc95ae89fc80d87e288",
+        "size_in_bytes": 5990,
+        "sha256_in_prefix": "eb1acbb11ae82ff93da2f8313ea78ef1611c83f18c9d2cc95ae89fc80d87e288"
+      },
+      {
+        "_path": "lib/libraqm.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "d389f1846a123ad016848971f4466fce379678a74b3db5beedd9265bbe89a7cd",
+        "size_in_bytes": 89040,
+        "sha256_in_prefix": "d389f1846a123ad016848971f4466fce379678a74b3db5beedd9265bbe89a7cd"
+      },
+      {
+        "_path": "lib/libraqm.dylib",
+        "path_type": "softlink",
+        "sha256": "d389f1846a123ad016848971f4466fce379678a74b3db5beedd9265bbe89a7cd",
+        "size_in_bytes": 15
+      },
+      {
+        "_path": "lib/pkgconfig/raqm.pc",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/bld/rattler-build_libraqm_1782807229/host_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "sha256": "2284aff611ed467be443cbe7a266c40c32e590a178e162d83018fce1c3a0b9fd",
+        "size_in_bytes": 558,
+        "sha256_in_prefix": "39325fc4c9facfc7a04997938e89a249d57762438e0e41d342276f470bb464ca"
+      }
+    ]
+  },
+  "link": {
+    "source": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libraqm-0.10.5-h45af499_1",
+    "type": 1
+  }
+}

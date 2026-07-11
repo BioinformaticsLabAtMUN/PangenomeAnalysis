@@ -1,0 +1,3 @@
+Matplotlib is building the font cache; this may take a moment.
+/Users/saba/Documents/GitHub/PangenomeAnalysis/scripts/core_genome_analysis.py:234: OptimizeWarning: Unknown solver options: disp
+  res = scipy.optimize.minimize(

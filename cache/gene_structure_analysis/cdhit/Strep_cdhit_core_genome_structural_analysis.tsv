@@ -1,0 +1,10 @@
+strain_id	core_genes_present	core_genes_missing	total_core_genes	core_coverage_percent	total_genes_in_strain	organism	protein_count	genes_per_protein_ratio
+AMCC400023	2156	0	2156	100.0	8844	AMCC400023		
+acidiscabies	2156	0	2156	100.0	9271	acidiscabies		
+bobili	2156	0	2156	100.0	8484	bobili		
+caniscabiei	2156	0	2156	100.0	8478	caniscabiei		
+coelicolor	2156	0	2156	100.0	7741	coelicolor		
+europaescabiei	2156	0	2156	100.0	9147	europaescabiei		
+lividans	2156	0	2156	100.0	7212	lividans		
+scabiei	2156	0	2156	100.0	8333	scabiei		
+albidoflavus	1548	608	2156	71.79962894248608	5748	albidoflavus		

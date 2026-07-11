@@ -313,10 +313,18 @@ def create_structural_visualizations(core_results, freq_analysis, unique_df, mis
 
 def create_missing_genes_summary_table(core_gene_absence_frequency, annotations, output_dir):
     """Create a comprehensive summary table of missing core genes with detailed annotations."""
-    
+
     if not core_gene_absence_frequency:
+        pd.DataFrame(columns=['Gene Name', 'Protein Function', 'Biological Process',
+                               'Missing Count', 'Missing %']).to_csv(
+            output_dir / 'missing_core_genes_summary_table.tsv', sep='\t', index=False)
+        with open(output_dir / 'missing_core_genes_summary_table.html', 'w') as f:
+            f.write("<!DOCTYPE html><html><head><title>Missing Core Genes Summary</title></head>"
+                    "<body><h1>Most Frequently Missing Core Genes in Streptomyces Pangenome</h1>"
+                    "<p>No strains have missing core genes.</p></body></html>")
+        print("No missing core genes - empty summary table saved")
         return
-    
+
     # Get top missing genes
     top_missing = core_gene_absence_frequency.most_common(30)
     
@@ -578,7 +586,13 @@ def create_core_coverage_plots(core_results, output_dir):
             fig.write_html(output_dir / 'interactive_core_coverage_with_outlier_names.html',
                           config={'displayModeBar': True, 'displaylogo': False})
             print(f"✅ Interactive plot saved with {len(outlier_data)} outliers - hover for full species names!")
-    
+
+    if not (output_dir / 'interactive_core_coverage_with_outlier_names.html').exists():
+        with open(output_dir / 'interactive_core_coverage_with_outlier_names.html', 'w') as f:
+            f.write("<!DOCTYPE html><html><head><title>Core Coverage vs Protein Count</title></head>"
+                    "<body><h1>Core Coverage vs Protein Count</h1>"
+                    "<p>No protein count data available to plot.</p></body></html>")
+
     # 2. Static version (exactly like original blue scatter)
     if 'protein_count' in core_results.columns:
         plot_data = core_results.dropna(subset=['protein_count'])
@@ -725,6 +739,13 @@ def create_core_coverage_plots(core_results, output_dir):
             
             print(f"✅ Color-coded static plot saved with {len(outliers)} outliers and COLORED CIRCLE legend")
 
+    if not (output_dir / 'color_coded_full_species_names.png').exists():
+        fig, ax = plt.subplots(1, 1, figsize=(10, 4))
+        ax.text(0.5, 0.5, "No protein count data available to plot", ha='center', va='center', fontsize=14)
+        ax.axis('off')
+        plt.savefig(output_dir / 'color_coded_full_species_names.png', dpi=300, bbox_inches='tight')
+        plt.close()
+
 def create_simple_pangenome_composition(freq_analysis, output_dir):
     """Create simple pangenome composition - ONLY pie chart with readable text."""
     
@@ -792,8 +813,13 @@ def create_all_strains_missing_plot(missing_counts, metadata, output_dir, max_st
     
     if len(strains_with_missing) == 0:
         print("No strains have missing core genes")
+        fig, ax = plt.subplots(1, 1, figsize=(10, 4))
+        ax.text(0.5, 0.5, "No strains have missing core genes", ha='center', va='center', fontsize=14)
+        ax.axis('off')
+        plt.savefig(output_dir / 'all_strains_missing_core_genes.png', dpi=300, bbox_inches='tight')
+        plt.close()
         return
-    
+
     # Sort by missing count (descending)
     sorted_strains = sorted(strains_with_missing.items(), key=lambda x: x[1], reverse=True)
     
@@ -954,10 +980,16 @@ def create_enhanced_missing_genes_detailed_plot(core_gene_absence_frequency, ann
     """Create enhanced detailed missing core genes plot with ACTUAL gene names and protein functions."""
     
     most_frequent_missing = core_gene_absence_frequency.most_common(25)
-    
+
     if len(most_frequent_missing) == 0:
+        fig, ax = plt.subplots(1, 1, figsize=(10, 4))
+        ax.text(0.5, 0.5, "No missing core genes to display", ha='center', va='center', fontsize=14)
+        ax.axis('off')
+        plt.savefig(output_dir / 'most_frequently_missing_core_genes_detailed.png',
+                   dpi=300, bbox_inches='tight', facecolor='white')
+        plt.close()
         return
-    
+
     # Get actual gene names and protein functions if annotations are available
     gene_display_names = []
     frequencies = []
@@ -1076,11 +1108,10 @@ def save_structural_results(core_results, freq_analysis, unique_df, missing_coun
                 'missing_core_genes_count': count
             })
     
-    if missing_data:
-        df_missing = pd.DataFrame(missing_data)
-        df_missing = df_missing.sort_values('missing_core_genes_count', ascending=False)
-        df_missing.to_csv(output_dir / 'missing_core_genes_structural.tsv', sep='\t', index=False)
-    
+    df_missing = pd.DataFrame(missing_data, columns=['strain_id', 'organism', 'missing_core_genes_count'])
+    df_missing = df_missing.sort_values('missing_core_genes_count', ascending=False)
+    df_missing.to_csv(output_dir / 'missing_core_genes_structural.tsv', sep='\t', index=False)
+
     # 4. Gene frequency analysis
     freq_data = []
     gene_counts = freq_analysis['gene_counts']
@@ -1098,29 +1129,29 @@ def save_structural_results(core_results, freq_analysis, unique_df, missing_coun
     df_freq.to_csv(output_dir / 'gene_frequency_analysis.tsv', sep='\t', index=False)
     
     # 5. Frequently missing core genes
-    if core_gene_absence_frequency:
-        missing_freq_data = []
-        for gene, absence_count in core_gene_absence_frequency.most_common():
-            row = {
-                'gene': gene,
-                'product': '',
-                'strains_missing': absence_count,
-                'missing_percentage': (absence_count / len(core_results)) * 100
-            }
-            
-            # Add product name if available
-            if annotations is not None:
-                gene_info = annotations[annotations['gene'] == gene]
-                if not gene_info.empty:
-                    if pd.notna(gene_info.iloc[0].get('product', '')):
-                        product = str(gene_info.iloc[0]['product']).strip()
-                        if product and product != 'nan' and product.lower() != 'deleted':
-                            row['product'] = product
-            
-            missing_freq_data.append(row)
-        
-        df_missing_freq = pd.DataFrame(missing_freq_data)
-        df_missing_freq.to_csv(output_dir / 'frequently_missing_core_genes_structural.tsv', sep='\t', index=False)
+    missing_freq_data = []
+    for gene, absence_count in core_gene_absence_frequency.most_common():
+        row = {
+            'gene': gene,
+            'product': '',
+            'strains_missing': absence_count,
+            'missing_percentage': (absence_count / len(core_results)) * 100
+        }
+
+        # Add product name if available
+        if annotations is not None:
+            gene_info = annotations[annotations['gene'] == gene]
+            if not gene_info.empty:
+                if pd.notna(gene_info.iloc[0].get('product', '')):
+                    product = str(gene_info.iloc[0]['product']).strip()
+                    if product and product != 'nan' and product.lower() != 'deleted':
+                        row['product'] = product
+
+        missing_freq_data.append(row)
+
+    df_missing_freq = pd.DataFrame(missing_freq_data,
+                                   columns=['gene', 'product', 'strains_missing', 'missing_percentage'])
+    df_missing_freq.to_csv(output_dir / 'frequently_missing_core_genes_structural.tsv', sep='\t', index=False)
     # 6. Summary report
     summary_lines = [
         "GENE-LEVEL STRUCTURAL ANALYSIS SUMMARY",

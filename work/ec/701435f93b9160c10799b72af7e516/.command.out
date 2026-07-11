@@ -1,0 +1,38 @@
+Starting core genome analysis...
+Input matrix: Strep_cdhit_strain_by_gene.npz
+Input labels: Strep_cdhit_strain_by_gene.npz.labels.txt
+
+=== Starting Core Genome Analysis ===
+
+Loading gene presence/absence matrix...
+Loaded matrix with shape: (30406, 9)
+Number of index labels: 30406
+Number of column labels: 9
+
+Estimating gene frequencies (Bernoulli grid model)...
+Starting Bernoulli grid analysis...
+Matrix shape: (30406, 9)
+Matrix dimensions: 30406 genes x 9 genomes
+Number of genes used in optimization: 30406 out of 30406
+Initial loglikelihood (using raw frequencies): -114327.81666996532
+Running optimization on genes with observed frequency > 10%...
+Optimization complete. Success: True
+Optimized frequencies (for valid genes) shape: (30406,)
+Identified 2156 core genes with threshold 0.99
+Number of core genes identified: 2156
+
+Fitting beta-binomial error model...
+Potential core genes: 1548 out of 30406
+Starting beta-binomial optimization with initial guess (1, 100) on potential core genes...
+Beta-binomial optimization succeeded: alpha = 0.0000, beta = 101.2782
+Beta-binomial fitting results:
+  Cutoff (max misses allowed): 0
+  Log-likelihood: -0.0000
+  MAE: 0.0000 (normalized: 0.0000, max norm: 0.0000, relative: 1471.2746)
+  Shapiro-Wilk p-value: 0.0017
+  Durbin-Watson statistic: 2.4445
+  Monte Carlo KS-test p-value: 0.0000
+Saving core genome matrix as NPZ...
+
+Core genome analysis complete!
+Core genome analysis completed

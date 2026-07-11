@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/Users/saba/Documents/GitHub/PangenomeAnalysis/.conda_cache/env-44a64feb7729fd02c5c973283f35e644
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: SQLite
+Description: SQL database engine
+Version: 3.53.3
+Libs: -L${libdir} -lsqlite3
+Libs.private:  -lz   
+Cflags: -I${includedir}

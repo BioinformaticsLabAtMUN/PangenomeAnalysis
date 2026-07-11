@@ -1,0 +1,31 @@
+Gene Name	Protein Function	Biological Process	Missing Count	Missing %
+pirin family protein	pirin family protein		1	0.7
+ATP-binding cassette domain-containing protein	ATP-binding cassette domain-containing protein		1	0.7
+carbohydrate ABC transporter permease	carbohydrate ABC transporter permease	carbohydrate transport|0008643||IEA|transmembrane transport|0055085||IEA	1	0.7
+sigma-70 family RNA polymerase sigma factor	sigma-70 family RNA polymerase sigma factor	DNA-templated transcription initiation|0006352||IEA|regulation of DNA-templated transcription|0006355||IEA	1	0.7
+MocR-like pyridoxine biosynthesis transcription factor PdxR	MocR-like pyridoxine biosynthesis transcription factor PdxR	pyridoxal phosphate biosynthetic process|0042823||IEA|regulation of DNA-templated transcription initiation|2000142||IEA	1	0.7
+alpha/beta hydrolase	alpha/beta hydrolase		1	0.7
+LCP family protein	LCP family protein	cell wall assembly|0070726||IEA	1	0.7
+transketolase	transketolase		1	0.7
+ribose-phosphate diphosphokinase	ribose-phosphate diphosphokinase	5-phosphoribose 1-diphosphate biosynthetic process|0006015||IEA|ribonucleoside monophosphate biosynthetic process|0009156||IEA|nucleotide biosynthetic process|0009165||IEA|phosphorylation|0016310||IEA	1	0.7
+SDR family oxidoreductase	SDR family oxidoreductase		1	0.7
+hypothetical protein	hypothetical protein		1	0.7
+NADPH-dependent 2,4-dienoyl-CoA reductase	NADPH-dependent 2,4-dienoyl-CoA reductase		1	0.7
+L,D-transpeptidase	L,D-transpeptidase	peptidoglycan-protein cross-linking|0018104||IEA	1	0.7
+mechanosensitive ion channel family protein	mechanosensitive ion channel family protein		1	0.7
+aldo/keto reductase	aldo/keto reductase		1	0.7
+GNAT family N-acetyltransferase	GNAT family N-acetyltransferase		1	0.7
+roadblock/LC7 domain-containing protein	roadblock/LC7 domain-containing protein		1	0.7
+YciI family protein	YciI family protein		1	0.7
+LmeA family phospholipid-binding protein	LmeA family phospholipid-binding protein		1	0.7
+type II toxin-antitoxin system Phd/YefM family antitoxin	type II toxin-antitoxin system Phd/YefM family antitoxin		1	0.7
+YncE family protein	YncE family protein		1	0.7
+GntR family transcriptional regulator	GntR family transcriptional regulator		1	0.7
+flavin-containing monooxygenase	flavin-containing monooxygenase		1	0.7
+LysR family transcriptional regulator	LysR family transcriptional regulator		1	0.7
+HlyD family efflux transporter periplasmic adaptor subunit	HlyD family efflux transporter periplasmic adaptor subunit		1	0.7
+pyroglutamyl-peptidase I	pyroglutamyl-peptidase I	proteolysis|0006508||IEA	1	0.7
+L-threonine 3-dehydrogenase	L-threonine 3-dehydrogenase	L-threonine catabolic process|0006567||IEA	1	0.7
+DUF2637 domain-containing protein	DUF2637 domain-containing protein		1	0.7
+VOC family protein	VOC family protein		1	0.7
+IclR family transcriptional regulator	IclR family transcriptional regulator	regulation of DNA-templated transcription|0006355||IEA	1	0.7

@@ -1,0 +1,162 @@
+{
+  "name": "libharfbuzz",
+  "version": "14.2.1",
+  "build": "h5a65909_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-arm64",
+  "subdir": "osx-arm64",
+  "fn": "libharfbuzz-14.2.1-h5a65909_1.conda",
+  "md5": "e8d6e86663316dfbdec7dac532824516",
+  "url": "https://conda.anaconda.org/conda-forge/osx-arm64/libharfbuzz-14.2.1-h5a65909_1.conda",
+  "sha256": "75860db66af9748572038d1e3a2260eca56ee4b38b9523e042fac8caf4277529",
+  "depends": [
+    "__osx >=11.0",
+    "cairo >=1.18.4,<2.0a0",
+    "graphite2 >=1.3.15,<2.0a0",
+    "icu >=78.3,<79.0a0",
+    "libcxx >=19",
+    "libfreetype >=2.14.3",
+    "libfreetype6 >=2.14.3",
+    "libglib >=2.88.2,<3.0a0",
+    "libpng >=1.6.58,<1.7.0a0",
+    "libzlib >=1.3.2,<2.0a0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "timestamp": 1782800553000,
+  "size": 900474,
+  "requested_spec": "None",
+  "package_tarball_full_path": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libharfbuzz-14.2.1-h5a65909_1.conda",
+  "extracted_package_dir": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libharfbuzz-14.2.1-h5a65909_1",
+  "files": [
+    "lib/libharfbuzz-cairo.0.dylib",
+    "lib/libharfbuzz-cairo.dylib",
+    "lib/libharfbuzz-gobject.0.dylib",
+    "lib/libharfbuzz-gobject.dylib",
+    "lib/libharfbuzz-gpu.0.dylib",
+    "lib/libharfbuzz-gpu.dylib",
+    "lib/libharfbuzz-icu.0.dylib",
+    "lib/libharfbuzz-icu.dylib",
+    "lib/libharfbuzz-raster.0.dylib",
+    "lib/libharfbuzz-raster.dylib",
+    "lib/libharfbuzz-subset.0.dylib",
+    "lib/libharfbuzz-subset.dylib",
+    "lib/libharfbuzz-vector.0.dylib",
+    "lib/libharfbuzz-vector.dylib",
+    "lib/libharfbuzz.0.dylib",
+    "lib/libharfbuzz.dylib"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "lib/libharfbuzz-cairo.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "03dcfc64a340be91096d8e346224b009598f570cca4e76a3859d92d461a5b634",
+        "size_in_bytes": 86240,
+        "sha256_in_prefix": "03dcfc64a340be91096d8e346224b009598f570cca4e76a3859d92d461a5b634"
+      },
+      {
+        "_path": "lib/libharfbuzz-cairo.dylib",
+        "path_type": "softlink",
+        "sha256": "03dcfc64a340be91096d8e346224b009598f570cca4e76a3859d92d461a5b634",
+        "size_in_bytes": 86240
+      },
+      {
+        "_path": "lib/libharfbuzz-gobject.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "d2899884143c38ba97bb74e574c1ed09784c83c954a0aa1d5ced78c92a14cff4",
+        "size_in_bytes": 131616,
+        "sha256_in_prefix": "d2899884143c38ba97bb74e574c1ed09784c83c954a0aa1d5ced78c92a14cff4"
+      },
+      {
+        "_path": "lib/libharfbuzz-gobject.dylib",
+        "path_type": "softlink",
+        "sha256": "d2899884143c38ba97bb74e574c1ed09784c83c954a0aa1d5ced78c92a14cff4",
+        "size_in_bytes": 131616
+      },
+      {
+        "_path": "lib/libharfbuzz-gpu.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "256b269ba8e044485a41190d2767e8e651734ad971852aaf21cabdac565d1290",
+        "size_in_bytes": 214000,
+        "sha256_in_prefix": "256b269ba8e044485a41190d2767e8e651734ad971852aaf21cabdac565d1290"
+      },
+      {
+        "_path": "lib/libharfbuzz-gpu.dylib",
+        "path_type": "softlink",
+        "sha256": "256b269ba8e044485a41190d2767e8e651734ad971852aaf21cabdac565d1290",
+        "size_in_bytes": 214000
+      },
+      {
+        "_path": "lib/libharfbuzz-icu.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "96134038a4c7b3de9e191d66f53f81727bd141f38d36c6e2ddbc5b75f07657fc",
+        "size_in_bytes": 53904,
+        "sha256_in_prefix": "96134038a4c7b3de9e191d66f53f81727bd141f38d36c6e2ddbc5b75f07657fc"
+      },
+      {
+        "_path": "lib/libharfbuzz-icu.dylib",
+        "path_type": "softlink",
+        "sha256": "96134038a4c7b3de9e191d66f53f81727bd141f38d36c6e2ddbc5b75f07657fc",
+        "size_in_bytes": 53904
+      },
+      {
+        "_path": "lib/libharfbuzz-raster.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "40d39149ef72422d15273d6364ed0ab6806bfe05024c4d7bc84031de66f04cba",
+        "size_in_bytes": 119712,
+        "sha256_in_prefix": "40d39149ef72422d15273d6364ed0ab6806bfe05024c4d7bc84031de66f04cba"
+      },
+      {
+        "_path": "lib/libharfbuzz-raster.dylib",
+        "path_type": "softlink",
+        "sha256": "40d39149ef72422d15273d6364ed0ab6806bfe05024c4d7bc84031de66f04cba",
+        "size_in_bytes": 119712
+      },
+      {
+        "_path": "lib/libharfbuzz-subset.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "65f823f75f8528555744147a1eab350d993e0fb89fcdc1724c921d6f1724ee42",
+        "size_in_bytes": 1422784,
+        "sha256_in_prefix": "65f823f75f8528555744147a1eab350d993e0fb89fcdc1724c921d6f1724ee42"
+      },
+      {
+        "_path": "lib/libharfbuzz-subset.dylib",
+        "path_type": "softlink",
+        "sha256": "65f823f75f8528555744147a1eab350d993e0fb89fcdc1724c921d6f1724ee42",
+        "size_in_bytes": 1422784
+      },
+      {
+        "_path": "lib/libharfbuzz-vector.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "632a284d9e8cd46a1607972c1bd303d28db24163d7e71524546d47c55feb7379",
+        "size_in_bytes": 189936,
+        "sha256_in_prefix": "632a284d9e8cd46a1607972c1bd303d28db24163d7e71524546d47c55feb7379"
+      },
+      {
+        "_path": "lib/libharfbuzz-vector.dylib",
+        "path_type": "softlink",
+        "sha256": "632a284d9e8cd46a1607972c1bd303d28db24163d7e71524546d47c55feb7379",
+        "size_in_bytes": 189936
+      },
+      {
+        "_path": "lib/libharfbuzz.0.dylib",
+        "path_type": "hardlink",
+        "sha256": "a5340b28a2cf78905e8d6137f62885932112ccf66336887bf4e1171947133549",
+        "size_in_bytes": 1334960,
+        "sha256_in_prefix": "a5340b28a2cf78905e8d6137f62885932112ccf66336887bf4e1171947133549"
+      },
+      {
+        "_path": "lib/libharfbuzz.dylib",
+        "path_type": "softlink",
+        "sha256": "a5340b28a2cf78905e8d6137f62885932112ccf66336887bf4e1171947133549",
+        "size_in_bytes": 1334960
+      }
+    ]
+  },
+  "link": {
+    "source": "/opt/homebrew/Caskroom/miniconda/base/pkgs/libharfbuzz-14.2.1-h5a65909_1",
+    "type": 1
+  }
+}
