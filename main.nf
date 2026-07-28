@@ -146,7 +146,6 @@ process runSwiftOrtho {
 
     script:
     // CHANGE: removed `source detect_conda.sh` and `conda activate/deactivate`
-    // Everything else is identical to original
     """
     echo "SwiftOrtho path: ${params.swiftortho_path}"
 
